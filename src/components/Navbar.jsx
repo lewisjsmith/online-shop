@@ -3,15 +3,18 @@ import styles from "../styles/Navbar.module.css";
 
 function Navbar() {
 
+    // Nav element?
     return (
         <div>
-            <div className={styles["nav-wrapper"]}>
-                <Link to={"/home"}>Logo</Link>
-                <Link to={"/men"}>Men</Link>
-                <Link to={"/women"}>Women</Link>
-                <Link to={"/accessories"}>Accessories</Link>
-                <Link to={"/cart"}>Cart</Link>
-            </div>
+            <nav>
+                <ul className={styles["nav-wrapper"]}>
+                    <li><Link to={"/"}>Logo</Link></li>
+                    <li><Link to={"/men"}>Men</Link></li>
+                    <li><Link to={"/women"}>Women</Link></li>
+                    <li><Link to={"/accessories"}>Accessories</Link></li>
+                    <li><Link to={"/cart"}>Cart</Link></li>
+                </ul>
+            </nav>
             <hr></hr>
             <Outlet />
         </div>
