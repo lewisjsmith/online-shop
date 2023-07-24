@@ -1,10 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
+import styles from "../styles/Navbar.module.css";
 
 function Navbar() {
 
     return (
         <div>
-            <div>
+            <div className={styles["nav-wrapper"]}>
                 <Link to={"/home"}>Logo</Link>
                 <Link to={"/men"}>Men</Link>
                 <Link to={"/women"}>Women</Link>
