@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { CartContext } from "../App";
+import { ShopContext } from "../App";
 import styles from "../styles/Navbar.module.css";
 
 function Navbar() {
 
-    const { cartItems } = useContext(CartContext);
+    const { cartItems } = useContext(ShopContext);
     const [cartNumber, setCartNumber] = useState(0);
 
     useEffect(() => {

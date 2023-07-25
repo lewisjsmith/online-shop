@@ -1,12 +1,14 @@
 import { useState, createContext, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import productExamples from './productExamples';
 import Navbar from './components/Navbar'
 import ErrorPage from './components/ErrorPage'
 import Cart from './components/Cart'
 import StorePage from './components/StorePage'
 import Home from './components/Home'
 
-export const CartContext = createContext({
+export const ShopContext = createContext({
+  products: [],
   cartItems: [],
   addToCart: () => { }
 });
@@ -14,6 +16,7 @@ export const CartContext = createContext({
 function App() {
 
   const [cartItems, setCartItems] = useState([]);
+  const products = productExamples;
 
   const addToCart = (id, added) => {
     if (added > 0) {
@@ -38,12 +41,8 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    console.log(cartItems)
-  }, [cartItems])
-
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <ShopContext.Provider value={{ products, cartItems, addToCart }}>
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
@@ -57,7 +56,7 @@ function App() {
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-    </CartContext.Provider>
+    </ShopContext.Provider>
   )
 }
 

@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
-import { CartContext } from "../App";
+import { ShopContext } from "../App";
 
 export default function Card(props) {
 
     const [quantity, setQuantity] = useState(0);
-    const { addToCart } = useContext(CartContext);
+    const { addToCart } = useContext(ShopContext);
 
     function increaseQuantity() {
         const x = quantity;
@@ -28,7 +28,10 @@ export default function Card(props) {
                 <span>&nbsp;</span>
                 <button onClick={increaseQuantity}>+</button>
             </div>
-            <button onClick={() => addToCart(props.item.id, quantity)}>Add to cart</button>
+            <button onClick={() => {
+                addToCart(props.item.id, quantity); 
+                setQuantity(0);
+                }}>Add to cart</button>
         </div>
     );
 }

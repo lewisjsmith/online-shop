@@ -1,8 +1,22 @@
+import { useContext } from 'react'
+import { ShopContext } from '../App'
+
 export default function Cart() {
+
+    const { cartItems } = useContext(ShopContext);
 
     return (
         <div>
-            This is the cart.
+            <ul>
+                {cartItems.map(item => {
+                    return (
+                        <li key={item.id}>
+                            <p>Item ID: {item.id}</p>
+                            <p>Quantity: {item.quantity}</p>
+                        </li>
+                    );
+                })}
+            </ul>
         </div>
     )
 }

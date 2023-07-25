@@ -1,13 +1,20 @@
 import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
-import productExamples from '../productExamples';
 import createFilter from '../helperFunctions/createFilter';
 import Card from './Card';
+import { ShopContext } from '../App';
 
 export default function StorePage() {
 
-    const [productList, setProductList] = useState(productExamples)
+    const { products } = useContext(ShopContext);
+
+    const [productList, setProductList] = useState([]);
+
+    useEffect(() => {
+        console.log(products)
+        setProductList([...products])
+    }, []);
 
     const obj = useLocation();
     const categoriesList = createFilter(obj.pathname);
