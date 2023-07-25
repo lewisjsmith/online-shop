@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import ErrorPage from './components/ErrorPage'
@@ -14,9 +14,16 @@ export const CartContext = createContext({
 function App() {
 
   const [cartItems, setCartItems] = useState([]);
-  const addToCart = () => {
-    return;
+
+  const addToCart = (id, quantity) => {
+    if (quantity > 0) {
+      setCartItems([...cartItems].concat([{ id: id, quantity: quantity }]));
+    }
   }
+
+  useEffect(() => {
+    console.log(cartItems)
+  }, [cartItems])
 
   return (
     <CartContext.Provider value={{ cartItems, addToCart }}>
