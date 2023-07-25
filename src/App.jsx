@@ -15,9 +15,26 @@ function App() {
 
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (id, quantity) => {
-    if (quantity > 0) {
-      setCartItems([...cartItems].concat([{ id: id, quantity: quantity }]));
+  const addToCart = (id, added) => {
+    if (added > 0) {
+
+      const itemsList = [...cartItems];
+      let updated = false;
+
+      const updatedList = [...itemsList.map(item => {
+        if(item.id === id) {
+          updated = true;
+          return {...item, quantity: item.quantity+added};
+        } else {
+          return {...item}
+        }
+      })];
+
+      if (updated) {
+        setCartItems([...updatedList])
+      } else {
+        setCartItems([...itemsList].concat([{ id: id, quantity: added }]));
+      }
     }
   }
 
