@@ -13,9 +13,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
-          <Route path="men" element={<StorePage />} />
-          <Route path="women" element={<StorePage />} />
-          <Route path="accessories" element={<StorePage />} />
+          <Route path="men" element={<StorePage />}>
+            <Route path=":pathname" element={<StorePage />} />
+          </Route>
+          <Route path="women" element={<StorePage />}>
+            <Route path=":pathname" element={<StorePage />} />
+          </Route>
           <Route path="cart" element={<Cart />} />
         </Route>
         <Route path="*" element={<ErrorPage />} />
