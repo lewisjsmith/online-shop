@@ -1,0 +1,12 @@
+.store-list {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.list-item {
+    height: 300px;
+    overflow: hidden;
+    border: solid black 1px;
+}

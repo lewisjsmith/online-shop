@@ -11,9 +11,6 @@ export default function Dropdown(props) {
         opacity: "0%"
     });
 
-
-
-
     return (
         <div className={styles["container"]}
             onClick={() => pos["transform"] === "translateY(-200%)" ?

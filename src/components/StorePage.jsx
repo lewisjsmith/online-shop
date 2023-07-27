@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid';
 import createFilter from '../helperFunctions/createFilter';
 import Card from './Card';
 import { ShopContext } from '../App';
+import styles from '../styles/StorePage.module.css';
 
 export default function StorePage() {
 
@@ -19,34 +20,32 @@ export default function StorePage() {
     const categoriesList = createFilter(obj.pathname);
 
     return (
-        <div>
-            <ul>
-                {categoriesList.length === 2 ? (
-                    productList.filter(item => item.categories.includes(categoriesList[0]))
-                        .filter(item => item.categories.includes(categoriesList[1])).map(item => {
-                            {
-                                return (
-                                    <li key={item.id}>
-                                        <Card item={item} src={item.srcOne} />
-                                    </li>
-                                );
-                            }
-                        })
-                ) : (
-                    productList
-                        .filter(item => item.categories.includes(categoriesList[0])).map(item => {
-                            {
-                                return (
-                                    <li key={item.id}>
-                                        <Card item={item} src={item.srcOne} />
-                                    </li>
-                                );
-                            }
+        <ul className={styles["store-list"]}>
+            {categoriesList.length === 2 ? (
+                productList.filter(item => item.categories.includes(categoriesList[0]))
+                    .filter(item => item.categories.includes(categoriesList[1])).map(item => {
+                        {
+                            return (
+                                <li className={styles["list-item"]} key={item.id}>
+                                    <Card item={item} src={item.srcOne} price={item.price}/>
+                                </li>
+                            );
                         }
-                        )
-                )
-                }
-            </ul>
-        </div>
+                    })
+            ) : (
+                productList
+                    .filter(item => item.categories.includes(categoriesList[0])).map(item => {
+                        {
+                            return (
+                                <li className={styles["list-item"]} key={item.id}>
+                                    <Card item={item} src={item.srcOne} price={item.price}/>
+                                </li>
+                            );
+                        }
+                    }
+                    )
+            )
+            }
+        </ul>
     );
 }
