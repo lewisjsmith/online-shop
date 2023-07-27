@@ -4,17 +4,20 @@ const productExamples = [
     {
         id: uuid(),
         categories: ["men"],
-        value: "trousers"
+        value: "trousers",
+        price: 10.00
     },
     {
         id: uuid(),
         categories: ["men", "accessories"],
-        value: "glasses"
+        value: "glasses",
+        price: 25.50
     },
     {
         id: uuid(),
         categories: ["women"],
-        value: "top"
+        value: "top",
+        price: 15.33
     },
 ]
 

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ShopContext } from "../App";
 import styles from "../styles/Navbar.module.css";
+import Dropdown from "./Dropdown"
 
 function Navbar() {
 
@@ -28,13 +29,20 @@ function Navbar() {
         <div>
             <nav>
                 <ul className={styles["nav-wrapper"]}>
+                    {/* <Dropdown />
+                    <Dropdown />
+                    <Dropdown />
+                    <Dropdown /> */}
                     <li><Link to={"/"}>Logo</Link></li>
                     <li><Link to={"/men"}>Men</Link></li>
                     <li><Link to={"/women"}>Women</Link></li>
+
+                    <li><input type="text" /></li>
+                    
                     <li><Link to={"/cart"}>Cart {cartNumber === 0 ? "" : cartNumber}</Link></li>
                 </ul>
             </nav>
-            <hr></hr>
+            
             <Outlet />
         </div>
     )

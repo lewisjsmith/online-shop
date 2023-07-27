@@ -5,6 +5,10 @@ export default function Cart() {
 
     const { cartItems } = useContext(ShopContext);
 
+    const totalPrice = cartItems.reduce((total, item) => {
+            return total + item.quantity * item.price;
+        }, 0);
+
     return (
         <div>
             <ul>
@@ -17,6 +21,7 @@ export default function Cart() {
                     );
                 })}
             </ul>
+            £{(Math.round(totalPrice*100)/100).toFixed(2)}
         </div>
     )
 }

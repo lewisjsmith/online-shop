@@ -36,7 +36,8 @@ function App() {
       if (updated) {
         setCartItems([...updatedList])
       } else {
-        setCartItems([...itemsList].concat([{ id: id, quantity: added }]));
+        const price = products.filter(product => product.id === id)[0].price;
+        setCartItems([...itemsList].concat([{ id: id, quantity: added, price: price }]));
       }
     }
   }
