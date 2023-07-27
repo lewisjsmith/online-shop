@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { ShopContext } from "../App";
 
 export default function Card(props) {
@@ -13,25 +14,15 @@ export default function Card(props) {
 
     function decreaseQuantity() {
         const x = quantity;
-        if(x > 0){
+        if (x > 0) {
             setQuantity(x - 1);
         }
     }
 
     return (
         <div>
-            {props.item.value}
-            <div>
-                <button onClick={decreaseQuantity}>-</button>
-                <span>&nbsp;</span>
-                <span>{quantity}</span>
-                <span>&nbsp;</span>
-                <button onClick={increaseQuantity}>+</button>
-            </div>
-            <button onClick={() => {
-                addToCart(props.item.id, quantity); 
-                setQuantity(0);
-                }}>Add to cart</button>
+            <p>{props.item.value}</p>
+            <p><Link to={`/product/${props.item.id}`}>Link to page</Link></p>
         </div>
     );
 }

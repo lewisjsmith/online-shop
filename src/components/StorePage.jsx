@@ -12,7 +12,7 @@ export default function StorePage() {
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
-        console.log(products)
+        // console.log(products)
         setProductList([...products])
     }, []);
 

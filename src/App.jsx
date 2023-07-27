@@ -6,6 +6,7 @@ import ErrorPage from './components/ErrorPage'
 import Cart from './components/Cart'
 import StorePage from './components/StorePage'
 import Home from './components/Home'
+import ProductPage from './components/ProductPage';
 
 export const ShopContext = createContext({
   products: [],
@@ -13,7 +14,7 @@ export const ShopContext = createContext({
   addToCart: () => { }
 });
 
-function App() {
+function App(props) {
 
   const [cartItems, setCartItems] = useState([]);
   const products = productExamples;
@@ -25,11 +26,11 @@ function App() {
       let updated = false;
 
       const updatedList = [...itemsList.map(item => {
-        if(item.id === id) {
+        if (item.id === id) {
           updated = true;
-          return {...item, quantity: item.quantity+added};
+          return { ...item, quantity: item.quantity + added };
         } else {
-          return {...item}
+          return { ...item }
         }
       })];
 
@@ -45,18 +46,35 @@ function App() {
   return (
     <ShopContext.Provider value={{ products, cartItems, addToCart }}>
       <Routes>
+
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
+
           <Route path="men" element={<StorePage />}>
             <Route path=":pathname" element={<StorePage />} />
           </Route>
+
           <Route path="women" element={<StorePage />}>
             <Route path=":pathname" element={<StorePage />} />
           </Route>
+
           <Route path="cart" element={<Cart />} />
+
+          {products.map(item => {
+            return (
+              <Route key={item.id} path={`product/${item.id}`} element={<ProductPage location={props.location}/>} />
+            );
+          })}
+
+          <Route path="*" element={<ErrorPage />} />
+
         </Route>
-        <Route path="*" element={<ErrorPage />} />
+
+
+
+
       </Routes>
+
     </ShopContext.Provider>
   )
 }
