@@ -12,7 +12,6 @@ export default function StorePage() {
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
-        // console.log(products)
         setProductList([...products])
     }, []);
 
@@ -23,26 +22,28 @@ export default function StorePage() {
         <div>
             <ul>
                 {categoriesList.length === 2 ? (
-                    productList.filter(item => item.categories.includes(categoriesList[0])).filter(item => item.categories.includes(categoriesList[1])).map(item => {
-                        {
-                            return (
-                                <li key={item.id}>
-                                    <Card item={item} />
-                                </li>
-                            );
-                        }
-                    })
+                    productList.filter(item => item.categories.includes(categoriesList[0]))
+                        .filter(item => item.categories.includes(categoriesList[1])).map(item => {
+                            {
+                                return (
+                                    <li key={item.id}>
+                                        <Card item={item} src={item.srcOne} />
+                                    </li>
+                                );
+                            }
+                        })
                 ) : (
-                    productList.filter(item => item.categories.includes(categoriesList[0])).map(item => {
-                        {
-                            return (
-                                <li key={item.id}>
-                                    <Card item={item} />
-                                </li>
-                            );
+                    productList
+                        .filter(item => item.categories.includes(categoriesList[0])).map(item => {
+                            {
+                                return (
+                                    <li key={item.id}>
+                                        <Card item={item} src={item.srcOne} />
+                                    </li>
+                                );
+                            }
                         }
-                    }
-                    )
+                        )
                 )
                 }
             </ul>

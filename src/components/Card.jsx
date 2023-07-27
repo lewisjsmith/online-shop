@@ -1,28 +1,19 @@
-import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { ShopContext } from "../App";
+import { useEffect, useState } from "react";
 
 export default function Card(props) {
 
-    const [quantity, setQuantity] = useState(0);
-    const { addToCart } = useContext(ShopContext);
+    const [source, setSource] = useState(null);
 
-    function increaseQuantity() {
-        const x = quantity;
-        setQuantity(x + 1);
-    }
-
-    function decreaseQuantity() {
-        const x = quantity;
-        if (x > 0) {
-            setQuantity(x - 1);
-        }
-    }
+    useEffect(() => {
+        import("../assets/" + props.src).then(image => setSource(image.default))
+    },[]);
 
     return (
-        <div>
+        <div style={{ border: "1px solid black" }}>
             <p>{props.item.value}</p>
             <p><Link to={`/product/${props.item.id}`}>Link to page</Link></p>
+            <img src={source}></img>
         </div>
     );
 }

@@ -4,31 +4,62 @@ import { ShopContext } from "../App";
 
 export default function ProductPage(props) {
 
-    const navigate = useNavigate();
-
-    const { pathname } = useLocation();
+    const { addToCart, products } = useContext(ShopContext);
 
     const [pathId, setPathId] = useState("");
-
     const [productName, setProductName] = useState("");
     const [productPrice, setProductPrice] = useState("");
-
     const [quantity, setQuantity] = useState(0);
+    const [allImages, setAllImages] = useState([]);
 
-    const { addToCart, products } = useContext(ShopContext);
+    const navigate = useNavigate();
+    const { pathname } = useLocation();
 
     useEffect(() => {
         setPathId(pathname.split("/").pop());
-    },[])
+    }, [])
 
     useEffect(() => {
-        if (pathId !== ""){
+        if (pathId !== "") {
             const prod = products.filter(item => item.id === pathId)[0];
             setProductName(prod.value);
             setProductPrice(prod.price);
+            let newImages = [...allImages];
+            import("../assets/" + prod.srcOne)
+                .then(image => {
+                    newImages = [...newImages].concat([image.default]);
+                })
+                .then(() => import("../assets/" + prod.srcTwo))
+                .then(image => {
+                    newImages = [...newImages].concat([image.default])
+                })
+                .then(() => setAllImages([...newImages]));
         }
+    }, [pathId])
 
-    },[pathId])    
+    useEffect(() => {
+        if (pathId !== "") {
+            const prod = products.filter(item => item.id === pathId)[0];
+            setProductPrice(prod.price);
+        }
+    }, [pathId])
+
+    useEffect(() => {
+        if (pathId !== "") {
+            const prod = products.filter(item => item.id === pathId)[0];
+            let newImages = [...allImages];
+            import("../assets/" + prod.srcOne)
+                .then(image => {
+                    newImages = [...newImages].concat([image.default]);
+                })
+                .then(() => import("../assets/" + prod.srcTwo))
+                .then(image => {
+                    newImages = [...newImages].concat([image.default])
+                })
+                .then(() => setAllImages([...newImages]));
+        }
+    }, [pathId])
+
 
     function increaseQuantity() {
         const x = quantity;
@@ -37,7 +68,7 @@ export default function ProductPage(props) {
 
     function decreaseQuantity() {
         const x = quantity;
-        if(x > 0){
+        if (x > 0) {
             setQuantity(x - 1);
         }
     }
@@ -46,7 +77,7 @@ export default function ProductPage(props) {
         <div>
             {/* Back button - requires history */}
             <p>{productName}</p>
-            <p>£{(Math.round(productPrice*100)/100).toFixed(2)}</p>
+            <p>£{(Math.round(productPrice * 100) / 100).toFixed(2)}</p>
             <div>
                 <button onClick={decreaseQuantity}>-</button>
                 <span>&nbsp;</span>
@@ -58,6 +89,11 @@ export default function ProductPage(props) {
                 addToCart(pathId, quantity);
                 setQuantity(0);
             }}>Add to cart</button>
+            {allImages.map(source => {
+                return (
+                    <img key={source} src={source}></img>
+                );
+            })}
         </div>
     );
 }

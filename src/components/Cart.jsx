@@ -21,7 +21,7 @@ export default function Cart() {
                     );
                 })}
             </ul>
-            £{(Math.round(totalPrice*100)/100).toFixed(2)}
+            <p>Total Cost: £{(Math.round(totalPrice*100)/100).toFixed(2)}</p>
         </div>
     )
 }
