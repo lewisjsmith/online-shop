@@ -10,6 +10,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+
+    color: black;
 }
 
 .card-image {
@@ -36,7 +38,6 @@
 }
 
 .card-text {
-
     padding: 0;
     margin: 0;
     font-weight: bold;

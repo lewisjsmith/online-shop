@@ -12,15 +12,13 @@ export default function Card(props) {
 
     return (
         <div className={styles["card"]} >
-
-            <img className={styles["card-image"]} src={source}></img>
-
-            <div className={styles["card-text-wrapper"]}>
-                <p className={styles["card-text"]}>{props.item.value}</p>
-                <p className={styles["card-text"]}><Link to={`/product/${props.item.id}`}>Link to page</Link></p>
-                <p className={styles["card-text"]}>£{(Math.round(props.price * 100) / 100).toFixed(2)}</p>
-            </div>
-            
+            <Link className={styles["card"]} to={`/product/${props.item.id}`}>
+                <img className={styles["card-image"]} src={source}></img>
+                <div className={styles["card-text-wrapper"]}>
+                    <p className={styles["card-text"]}>{props.item.value}</p>
+                    <p className={styles["card-text"]}>£{(Math.round(props.price * 100) / 100).toFixed(2)}</p>
+                </div>
+            </Link>
         </div>
     );
 }
