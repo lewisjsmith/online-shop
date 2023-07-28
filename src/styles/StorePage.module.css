@@ -9,5 +9,8 @@
 .list-item {
     height: 300px;
     overflow: hidden;
-    border: solid black 1px;
+}
+
+.list-item:hover {
+    transform: scale(1.03);
 }
