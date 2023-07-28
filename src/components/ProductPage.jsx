@@ -2,18 +2,18 @@ import { useContext, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ShopContext } from "../App";
 
-export default function ProductPage(props) {
+export default function ProductPage() {
 
     const { addToCart, products } = useContext(ShopContext);
+    const { pathname } = useLocation();
+    // const navigate = useNavigate();
 
     const [pathId, setPathId] = useState("");
     const [productName, setProductName] = useState("");
     const [productPrice, setProductPrice] = useState("");
-    const [quantity, setQuantity] = useState(0);
     const [allImages, setAllImages] = useState([]);
 
-    const navigate = useNavigate();
-    const { pathname } = useLocation();
+    const [quantity, setQuantity] = useState(0);
 
     useEffect(() => {
         setPathId(pathname.split("/").pop());
@@ -23,17 +23,6 @@ export default function ProductPage(props) {
         if (pathId !== "") {
             const prod = products.filter(item => item.id === pathId)[0];
             setProductName(prod.value);
-            setProductPrice(prod.price);
-            let newImages = [...allImages];
-            import("../assets/" + prod.srcOne)
-                .then(image => {
-                    newImages = [...newImages].concat([image.default]);
-                })
-                .then(() => import("../assets/" + prod.srcTwo))
-                .then(image => {
-                    newImages = [...newImages].concat([image.default])
-                })
-                .then(() => setAllImages([...newImages]));
         }
     }, [pathId])
 

@@ -8,14 +8,19 @@ export default function Card(props) {
 
     useEffect(() => {
         import("../assets/" + props.src).then(image => setSource(image.default))
-    },[]);
+    }, []);
 
     return (
         <div className={styles["card"]} >
-            <p>{props.item.value}</p>
-            <p><Link to={`/product/${props.item.id}`}>Link to page</Link></p>
-            <p>£{(Math.round(props.price * 100) / 100).toFixed(2)}</p>
-            <img src={source}></img>
+
+            <img className={styles["card-image"]} src={source}></img>
+
+            <div className={styles["card-text-wrapper"]}>
+                <p className={styles["card-text"]}>{props.item.value}</p>
+                <p className={styles["card-text"]}><Link to={`/product/${props.item.id}`}>Link to page</Link></p>
+                <p className={styles["card-text"]}>£{(Math.round(props.price * 100) / 100).toFixed(2)}</p>
+            </div>
+            
         </div>
     );
 }
