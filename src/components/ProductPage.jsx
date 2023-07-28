@@ -67,23 +67,26 @@ export default function ProductPage() {
     }
 
     return (
-        <div>
-            {/* Back button - requires history */}
-            <p>{productName}</p>
-            <p>£{(Math.round(productPrice * 100) / 100).toFixed(2)}</p>
-            <div>
-                <button onClick={decreaseQuantity}>-</button>
-                <span>&nbsp;</span>
-                <span>{quantity}</span>
-                <span>&nbsp;</span>
-                <button onClick={increaseQuantity}>+</button>
-            </div>
-            <button onClick={() => {
-                addToCart(pathId, quantity);
-                setQuantity(0);
-            }}>Add to cart</button>
+        <div className={styles["page-wrapper"]}>
 
-            <ImageSlider allImages={allImages}/>
+            <ImageSlider allImages={allImages} />
+
+            <div className={styles["info-wrapper"]}>
+                {/* Back button - requires history */}
+                <p className={styles["info-detail"]}>{productName}</p>
+                <p className={styles["info-detail"]}>£{(Math.round(productPrice * 100) / 100).toFixed(2)}</p>
+                <div>
+                    <button onClick={decreaseQuantity}>-</button>
+                    <span>&nbsp;</span>
+                    <span>{quantity}</span>
+                    <span>&nbsp;</span>
+                    <button onClick={increaseQuantity}>+</button>
+                </div>
+                <button onClick={() => {
+                    addToCart(pathId, quantity);
+                    setQuantity(0);
+                }}>Add to cart</button>
+            </div>
 
         </div>
     );

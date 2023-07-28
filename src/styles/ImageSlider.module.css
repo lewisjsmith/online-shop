@@ -25,6 +25,7 @@
 .btn-right {
     position: absolute;
     top: 50%;
+    padding: 2ch;
 }
 
 .btn-left {
