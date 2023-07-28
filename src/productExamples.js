@@ -65,7 +65,57 @@ const productExamples = [
         srcOne: "bib_1_front.png",
         srcTwo: "bib_1_back.png"
     },
+
     
+    {
+        id: uuid(),
+        categories: ["women", "coat"],
+        value: "Crimson-Pattern Jacket",
+        price: 200.00,
+        srcOne: "wcoat_1_front.png",
+        srcTwo: "wcoat_1_back.png"
+    },
+    {
+        id: uuid(),
+        categories: ["women", "coat"],
+        value: "Spring-Pattern Jacket",
+        price: 200.00,
+        srcOne: "wcoat_2_front.png",
+        srcTwo: "wcoat_2_back.png"
+    },
+    {
+        id: uuid(),
+        categories: ["women", "coat"],
+        value: "Army Green Jacket",
+        price: 200.00,
+        srcOne: "wcoat_3_front.png",
+        srcTwo: "wcoat_3_back.png"
+    },
+    {
+        id: uuid(),
+        categories: ["women", "midlayer"],
+        value: "Deep Marine Midlayer",
+        price: 100.00,
+        srcOne: "wmid_1_front.png",
+        srcTwo: "wmid_1_back.png"
+    },
+    {
+        id: uuid(),
+        categories: ["women", "midlayer"],
+        value: "Grey Knit Hoodie",
+        price: 110.00,
+        srcOne: "wmid_2_front.png",
+        srcTwo: "wmid_2_back.png"
+    },
+    {
+        id: uuid(),
+        categories: ["women", "midlayer"],
+        value: "Cream Knitted Fleece",
+        price: 110.00,
+        srcOne: "wmid_3_front.png",
+        srcTwo: "wmid_3_back.png"
+    },
+
 ]
 
 export default productExamples;

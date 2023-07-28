@@ -1,0 +1,36 @@
+.image-view {
+    width: 600px;
+    height: 600px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.image-slider {
+    width: 1200px;
+    height: 600px;
+
+    position: absolute;
+
+    transition: all 1.3s ease-in-out
+}
+
+.sliding-image {
+    width: 600px;
+    height: 600px;
+}
+
+.btn-left,
+.btn-right {
+    position: absolute;
+    top: 50%;
+}
+
+.btn-left {
+    left: 0;
+}
+
+.btn-right {
+    right: 0;
+}

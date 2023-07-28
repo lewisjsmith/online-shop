@@ -1,6 +1,8 @@
 import { useContext, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ShopContext } from "../App";
+import styles from "../styles/ProductPage.module.css"
+import ImageSlider from "./ImageSlider";
 
 export default function ProductPage() {
 
@@ -12,6 +14,8 @@ export default function ProductPage() {
     const [productName, setProductName] = useState("");
     const [productPrice, setProductPrice] = useState("");
     const [allImages, setAllImages] = useState([]);
+
+    const [slide, setSlide] = useState({});
 
     const [quantity, setQuantity] = useState(0);
 
@@ -78,11 +82,9 @@ export default function ProductPage() {
                 addToCart(pathId, quantity);
                 setQuantity(0);
             }}>Add to cart</button>
-            {allImages.map(source => {
-                return (
-                    <img key={source} src={source}></img>
-                );
-            })}
+
+            <ImageSlider allImages={allImages}/>
+
         </div>
     );
 }
