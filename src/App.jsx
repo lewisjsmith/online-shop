@@ -19,14 +19,14 @@ function App(props) {
   const [cartItems, setCartItems] = useState([]);
   const products = productExamples;
 
-  const addToCart = (id, added) => {
+  const addToCart = (value, added) => {
     if (added > 0) {
 
       const itemsList = [...cartItems];
       let updated = false;
 
       const updatedList = [...itemsList.map(item => {
-        if (item.id === id) {
+        if (item.value === value) {
           updated = true;
           return { ...item, quantity: item.quantity + added };
         } else {
@@ -37,15 +37,14 @@ function App(props) {
       if (updated) {
         setCartItems([...updatedList])
       } else {
-        const price = products.filter(product => product.id === id)[0].price;
-        setCartItems([...itemsList].concat([{ id: id, quantity: added, price: price }]));
+        const price = products.filter(product => product.value === value)[0].price;
+        setCartItems([...itemsList].concat([{ value: value, quantity: added, price: price }]));
       }
     }
   }
 
   return (
-    <ShopContext.Provider value={{ products, cartItems, addToCart }
-    }>
+    <ShopContext.Provider value={{ products, cartItems, addToCart }}>
       <Routes>
 
         <Route path="/" element={<Navbar />}>
@@ -63,7 +62,7 @@ function App(props) {
 
           {products.map(item => {
             return (
-              <Route key={item.id} path={`product/${item.id}`} element={<ProductPage location={props.location} />} />
+              <Route key={item.value} path={`product/${item.value}`} element={<ProductPage location={props.location} />} />
             );
           })}
 
@@ -71,12 +70,8 @@ function App(props) {
 
         </Route>
 
-
-
-
       </Routes>
-
-    </ShopContext.Provider >
+    </ShopContext.Provider>
   )
 }
 

@@ -14,8 +14,8 @@ export default function Cart() {
             <ul>
                 {cartItems.map(item => {
                     return (
-                        <li key={item.id}>
-                            <p>Item ID: {item.id}</p>
+                        <li key={item.value}>
+                            <p>Product: {item.value}</p>
                             <p>Quantity: {item.quantity}</p>
                         </li>
                     );

@@ -8,9 +8,9 @@ export default function ImageSlider(props) {
     return (
         <div className={styles["image-view"]}>
             <div className={styles["image-slider"]} style={slide}>
-                {props.allImages.map(source => {
+                {props.allImages.map((source) => {
                     return (
-                        <img key={source} src={source} className={styles["sliding-image"]}></img>
+                        <img key={String(source)} src={source} className={styles["sliding-image"]}></img>
                     );
                 })}
             </div>

@@ -10,12 +10,18 @@ export default function Card(props) {
         setSource(props.src);
     }, []);
 
+    let name = props.item.value.split("-");
+    for(let i = 0; i<name.length; i++) {
+        name[i] = name[i].charAt(0).toUpperCase() + name[i].slice(1);
+    }
+    name = name.join(" ");
+
     return (
         <div className={styles["card"]} >
-            <Link className={styles["card"]} to={`/product/${props.item.id}`}>
+            <Link className={styles["card"]} to={`/product/${props.item.value}`}>
                 <img className={styles["card-image"]} src={source}></img>
                 <div className={styles["card-text-wrapper"]}>
-                    <p className={styles["card-text"]}>{props.item.value}</p>
+                    <p className={styles["card-text"]}>{name}</p>
                     <p className={styles["card-text"]}>£{(Math.round(props.price * 100) / 100).toFixed(2)}</p>
                 </div>
             </Link>

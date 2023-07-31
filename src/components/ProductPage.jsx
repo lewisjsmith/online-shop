@@ -14,8 +14,7 @@ export default function ProductPage() {
     const [productName, setProductName] = useState("");
     const [productPrice, setProductPrice] = useState("");
     const [allImages, setAllImages] = useState([]);
-
-    const [slide, setSlide] = useState({});
+    const [product, setProduct] = useState({});
 
     const [quantity, setQuantity] = useState(0);
 
@@ -25,28 +24,36 @@ export default function ProductPage() {
 
     useEffect(() => {
         if (pathId !== "") {
-            const prod = products.filter(item => item.id === pathId)[0];
-            setProductName(prod.value);
+            const prod = products.filter(item => item.value === pathId)[0];
+            setProduct({ ...prod });
         }
     }, [pathId])
 
     useEffect(() => {
         if (pathId !== "") {
-            const prod = products.filter(item => item.id === pathId)[0];
-            setProductPrice(prod.price);
+            let name = product.value.split("-");
+            for (let i = 0; i < name.length; i++) {
+                name[i] = name[i].charAt(0).toUpperCase() + name[i].slice(1);
+            }
+            name = name.join(" ");
+            setProductName(name);
         }
-    }, [pathId])
+    }, [product])
 
     useEffect(() => {
         if (pathId !== "") {
-            const prod = products.filter(item => item.id === pathId)[0];
+            setProductPrice(product.price);
+        }
+    }, [product])
+
+    useEffect(() => {
+        if (pathId !== "") {
             let newImages = [...allImages];
-            newImages.push(prod.srcOne);
-            newImages.push(prod.srcTwo);
+            newImages.push(product.srcOne);
+            newImages.push(product.srcTwo);
             setAllImages([...newImages]);
         }
-    }, [pathId])
-
+    }, [product])
 
     function increaseQuantity() {
         const x = quantity;
@@ -77,7 +84,7 @@ export default function ProductPage() {
                     <button onClick={increaseQuantity}>+</button>
                 </div>
                 <button onClick={() => {
-                    addToCart(pathId, quantity);
+                    addToCart(product.value, quantity);
                     setQuantity(0);
                 }}>Add to cart</button>
             </div>

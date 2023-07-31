@@ -36,65 +36,57 @@ import wmidb3 from './assets/wmid-3-back.png';
 
 const productExamples = [
     {
-        id: uuid(),
         categories: ["men", "coat"],
-        value: "Metal Blue Ski Jacket",
+        value: "metal-blue-ski-jacket",
         price: 150.00,
         srcOne: cf1,
         srcTwo: cb1
     },
     {
-        id: uuid(),
         categories: ["men", "coat"],
-        value: "Green Ski Jacket",
+        value: "green-ski-jacket",
         price: 120.00,
         srcOne: cf2,
         srcTwo: cb2
     },
     {
-        id: uuid(),
         categories: ["men", "coat"],
-        value: "Vibrant Purple Ski Jacket",
+        value: "vibrant-purple-ski-jacket",
         price: 170.00,
         srcOne: cf3,
         srcTwo: cb3
     },
     {
-        id: uuid(),
         categories: ["men", "midlayer"],
-        value: "Beige Black Stripe Midlayer",
+        value: "beige-black-stripe-midlayer",
         price: 100.00,
         srcOne: midf1,
         srcTwo: midb1
     },
     {
-        id: uuid(),
         categories: ["men", "midlayer"],
-        value: "Knitted Cream Midlayer",
+        value: "knitted-cream-midlayer",
         price: 110.00,
         srcOne: midf2,
         srcTwo: midb2
     },
     {
-        id: uuid(),
         categories: ["men", "midlayer"],
-        value: "Reinforced Shirt Green-Cream",
+        value: "reinforced-shirt-green-cream",
         price: 110.00,
         srcOne: midf3,
         srcTwo: midb3
     },
     {
-        id: uuid(),
         categories: ["men", "shirt"],
-        value: "Camo Green Shirt",
+        value: "camo-green-shirt",
         price: 70.00,
         srcOne: sf1,
         srcTwo: sb1
     },
     {
-        id: uuid(),
         categories: ["men", "bib"],
-        value: "Night Blue Bib",
+        value: "night-blue-bib",
         price: 200.00,
         srcOne: bf1,
         srcTwo: bb1
@@ -102,49 +94,43 @@ const productExamples = [
 
     
     {
-        id: uuid(),
         categories: ["women", "coat"],
-        value: "Crimson-Pattern Jacket",
+        value: "crimson-pattern-jacket",
         price: 200.00,
         srcOne: wcf1,
         srcTwo: wcb1
     },
     {
-        id: uuid(),
         categories: ["women", "coat"],
-        value: "Spring-Pattern Jacket",
+        value: "spring-pattern-jacket",
         price: 200.00,
         srcOne: wcf2,
         srcTwo: wcb2
     },
     {
-        id: uuid(),
         categories: ["women", "coat"],
-        value: "Army Green Jacket",
+        value: "army-green-jacket",
         price: 200.00,
         srcOne: wcf3,
         srcTwo: wcb3
     },
     {
-        id: uuid(),
         categories: ["women", "midlayer"],
-        value: "Deep Marine Midlayer",
+        value: "deep-marine-midlayer",
         price: 100.00,
         srcOne: wmidf1,
         srcTwo: wmidb1
     },
     {
-        id: uuid(),
         categories: ["women", "midlayer"],
-        value: "Grey Knit Hoodie",
+        value: "grey-knit-hoodie",
         price: 110.00,
         srcOne: wmidf2,
         srcTwo: wmidb2
     },
     {
-        id: uuid(),
         categories: ["women", "midlayer"],
-        value: "Cream Knitted Fleece",
+        value: "cream-knitted-fleece",
         price: 110.00,
         srcOne: wmidf3,
         srcTwo: wmidb3

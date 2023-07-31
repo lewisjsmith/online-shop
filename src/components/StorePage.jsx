@@ -26,7 +26,7 @@ export default function StorePage() {
                     .filter(item => item.categories.includes(categoriesList[1])).map(item => {
                         {
                             return (
-                                <li className={styles["list-item"]} key={item.id}>
+                                <li className={styles["list-item"]} key={item.value}>
                                     <Card item={item} src={item.srcOne} price={item.price}/>
                                 </li>
                             );
@@ -37,7 +37,7 @@ export default function StorePage() {
                     .filter(item => item.categories.includes(categoriesList[0])).map(item => {
                         {
                             return (
-                                <li className={styles["list-item"]} key={item.id}>
+                                <li className={styles["list-item"]} key={item.value}>
                                     <Card item={item} src={item.srcOne} price={item.price}/>
                                 </li>
                             );
