@@ -10,7 +10,9 @@ export default function CartPanel(props) {
 
     return (
         <div className={props.show ? styles["show-panel"] : styles["hidden-panel"]} onClick={() => props.setShow(!props.show)}>
-            <p>Cart</p>
+
+            <h3>Cart</h3>
+            
             <Link to={"/cart"}>
                 <button>Continue to Cart</button>
             </Link>
@@ -19,16 +21,11 @@ export default function CartPanel(props) {
                 {cartItems.map(item => {
                     return (
                         <li key={item.value} className={styles["list-item"]}>
-                            <CartCard product={item.value} />
-                            <div>
-                                <p>{item.value}</p>
-                                <p>Quantity: {item.quantity}</p>
-                            </div>
+                            <CartCard item={item} quantity={item.quantity} />
                         </li>
                     );
                 })}
             </ul>
-
 
         </div>
     );
