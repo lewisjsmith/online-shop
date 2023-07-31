@@ -1,5 +1,6 @@
-import { useState, createContext, useEffect } from 'react'
+import { useState, createContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
+
 import productExamples from './productExamples';
 import Navbar from './components/Navbar'
 import ErrorPage from './components/ErrorPage'
@@ -7,6 +8,8 @@ import Cart from './components/Cart'
 import StorePage from './components/StorePage'
 import Home from './components/Home'
 import ProductPage from './components/ProductPage';
+
+import './styles/App.css'
 
 export const ShopContext = createContext({
   products: [],
