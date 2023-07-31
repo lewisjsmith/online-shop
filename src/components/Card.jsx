@@ -7,7 +7,7 @@ export default function Card(props) {
     const [source, setSource] = useState(null);
 
     useEffect(() => {
-        import("../assets/" + props.src).then(image => setSource(image.default))
+        setSource(props.src);
     }, []);
 
     return (

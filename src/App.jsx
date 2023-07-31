@@ -11,7 +11,7 @@ import ProductPage from './components/ProductPage';
 export const ShopContext = createContext({
   products: [],
   cartItems: [],
-  addToCart: () => { }
+  addToCart: () => { },
 });
 
 function App(props) {
@@ -44,7 +44,8 @@ function App(props) {
   }
 
   return (
-    <ShopContext.Provider value={{ products, cartItems, addToCart }}>
+    <ShopContext.Provider value={{ products, cartItems, addToCart }
+    }>
       <Routes>
 
         <Route path="/" element={<Navbar />}>
@@ -62,7 +63,7 @@ function App(props) {
 
           {products.map(item => {
             return (
-              <Route key={item.id} path={`product/${item.id}`} element={<ProductPage location={props.location}/>} />
+              <Route key={item.id} path={`product/${item.id}`} element={<ProductPage location={props.location} />} />
             );
           })}
 
@@ -75,7 +76,7 @@ function App(props) {
 
       </Routes>
 
-    </ShopContext.Provider>
+    </ShopContext.Provider >
   )
 }
 

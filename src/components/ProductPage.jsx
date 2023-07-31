@@ -41,15 +41,9 @@ export default function ProductPage() {
         if (pathId !== "") {
             const prod = products.filter(item => item.id === pathId)[0];
             let newImages = [...allImages];
-            import("../assets/" + prod.srcOne)
-                .then(image => {
-                    newImages = [...newImages].concat([image.default]);
-                })
-                .then(() => import("../assets/" + prod.srcTwo))
-                .then(image => {
-                    newImages = [...newImages].concat([image.default])
-                })
-                .then(() => setAllImages([...newImages]));
+            newImages.push(prod.srcOne);
+            newImages.push(prod.srcTwo);
+            setAllImages([...newImages]);
         }
     }, [pathId])
 
