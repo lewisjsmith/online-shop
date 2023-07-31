@@ -41,3 +41,12 @@
 
     color: white;
 }
+
+.cart-list {
+    width: 100%;
+}
+
+.list-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
