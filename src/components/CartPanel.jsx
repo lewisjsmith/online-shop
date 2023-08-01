@@ -30,7 +30,7 @@ export default function CartPanel(props) {
 
         <div ref={panelRef} className={props.show ? styles["show-panel"] : styles["hidden-panel"]}>
 
-            <h3>Cart</h3>
+            <h2>Cart</h2>
 
             <Link to={"/cart"}>
                 <button>Continue to Cart</button>

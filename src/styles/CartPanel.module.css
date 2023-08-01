@@ -30,8 +30,8 @@
     transform: translateX(0%);
 }
 
-.show-panel h3, 
-.hidden-panel h3 {
+.show-panel h2, 
+.hidden-panel h2 {
     color: white;
     background-color: black;
 }
