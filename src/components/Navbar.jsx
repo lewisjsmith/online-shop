@@ -40,16 +40,10 @@ function Navbar() {
 
             <nav>
                 <ul className={styles["nav-wrapper"]}>
-                    {/* <Dropdown />
-                    <Dropdown />
-                    <Dropdown />
-                    <Dropdown /> */}
                     <li className={styles["list-item"]}><Link to={"/"}><h2>Logo</h2></Link></li>
-                    <li className={styles["list-item"]}><Link to={"/men"}><h2>Men</h2></Link></li>
-                    <li className={styles["list-item"]}><Link to={"/women"}><h2>Women</h2></Link></li>
-
+                    <Dropdown main={"men"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/>
+                    <Dropdown main={"women"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/>
                     <li className={styles["list-item"]}><input className={styles["search-bar"]} type="text" /></li>
-
                     <li className={styles["list-item"]}><h2 onClick={() => setShow(!show)}>Cart {cartNumber === 0 ? "" : cartNumber}</h2></li>
                 </ul>
             </nav>

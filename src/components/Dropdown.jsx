@@ -4,27 +4,24 @@ import styles from "../styles/Dropdown.module.css";
 
 export default function Dropdown(props) {
 
-    // needs data for dropdown list values, list paths
+    const { links, main } = props;
 
-    const [pos, setPos] = useState({
-        transform: "translateY(-200%)",
-        opacity: "0%"
-    });
+    const [show, setShow] = useState(false);
+
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
 
     return (
-        <div className={styles["container"]}
-            onClick={() => pos["transform"] === "translateY(-200%)" ?
-                setPos({ transform: "translateY(75%)", opacity: "100%" }) : 
-                setPos({ transform: "translateY(-200%)", opacity: "0%" }) }>
-            <h3 className={styles["header"]}>
-                Menu
+        <div className={styles["container"]}>
+            <h3 className={styles["header"]} onClick={() => setShow(!show)}>
+                {capitalize(main)}
             </h3>
-            <ul className={styles["options"]} style={pos}>
-                <li>Option 1</li>
-                <li>Option 2</li>
-                <li>Option 3</li>
-                <li>Option 4</li>
-                <li>Option 5</li>
+            <ul className={show ? styles["show-options"] : styles["hidden-options"]}>
+                {links.map(item => {
+                    return <li key={item}><Link to={`/${main}/${item}`}>{capitalize(item)}</Link></li>
+                })}
+                <li key={"main"}><Link to={`/${main}/`}>Shop All</Link></li>
             </ul>
         </div>
     );
