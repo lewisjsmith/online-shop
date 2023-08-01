@@ -74,8 +74,6 @@ export default function StorePage() {
         }
     }) : productList;
 
-
-
     return (
         <div>
             <h3>
@@ -89,8 +87,8 @@ export default function StorePage() {
                 <option value={"za"}>Name Z to A</option>
             </select>
             <ul className={styles["store-list"]}>
-                {sortedProducts.length === 2 ? (
-                    productList.filter(item => item.categories.includes(categoriesList[0]))
+                {categoriesList.length === 2 ? (
+                    sortedProducts.filter(item => item.categories.includes(categoriesList[0]))
                         .filter(item => item.categories.includes(categoriesList[1])).map(item => {
                             {
                                 return (
