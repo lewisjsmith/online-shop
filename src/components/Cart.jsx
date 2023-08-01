@@ -14,7 +14,7 @@ export default function Cart() {
             <ul>
                 {cartItems.map(item => {
                     return (
-                        <li key={item.value}>
+                        <li key={item.value + "-" + item.size}>
                             <p>Product: {item.value}</p>
                             <p>Quantity: {item.quantity}</p>
                         </li>

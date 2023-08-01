@@ -17,6 +17,11 @@ export default function ProductPage() {
     const [product, setProduct] = useState({});
 
     const [quantity, setQuantity] = useState(0);
+    const [size, setSize] = useState(null);
+
+    function handleSizeChange(e) {
+        setSize(e.target.value);
+    }
 
     useEffect(() => {
         setPathId(pathname.split("/").pop());
@@ -77,6 +82,16 @@ export default function ProductPage() {
                 <p className={styles["info-detail"]}>{productName}</p>
                 <p className={styles["info-detail"]}>£{(Math.round(productPrice * 100) / 100).toFixed(2)}</p>
                 <div>
+                    <select id="sizes" onChange={handleSizeChange}>
+                        <option value={null}>- Please select -</option>
+                        <option value="xl">XL</option>
+                        <option value="l">L</option>
+                        <option value="m">M</option>
+                        <option value="s">S</option>
+                        <option value="xs">XS</option>
+                    </select>
+                </div>
+                <div>
                     <button onClick={decreaseQuantity}>-</button>
                     <span>&nbsp;</span>
                     <span>{quantity}</span>
@@ -84,11 +99,13 @@ export default function ProductPage() {
                     <button onClick={increaseQuantity}>+</button>
                 </div>
                 <button onClick={() => {
-                    addToCart(product.value, quantity);
-                    setQuantity(0);
+                    size ? (
+                        addToCart(product.value, quantity, size),
+                        setQuantity(0)
+                    ) : null
                 }}>Add to cart</button>
             </div>
 
-        </div>
+        </div >
     );
 }

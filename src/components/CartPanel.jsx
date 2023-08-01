@@ -39,7 +39,7 @@ export default function CartPanel(props) {
             <ul className={styles["cart-list"]}>
                 {cartItems.map(item => {
                     return (
-                        <li key={item.value} className={styles["list-item"]}>
+                        <li key={item.value + "-" + item.size} className={styles["list-item"]}>
                             <CartCard item={item} quantity={item.quantity} />
                         </li>
                     );

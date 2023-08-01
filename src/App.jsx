@@ -22,14 +22,15 @@ function App(props) {
   const [cartItems, setCartItems] = useState([]);
   const products = productExamples;
 
-  const addToCart = (value, added) => {
+  // update for size
+  const addToCart = (value, added, size) => {
     if (added > 0) {
 
       const itemsList = [...cartItems];
       let updated = false;
 
       const updatedList = [...itemsList.map(item => {
-        if (item.value === value) {
+        if (item.value === value && item.size === size) {
           updated = true;
           return { ...item, quantity: item.quantity + added };
         } else {
@@ -41,7 +42,7 @@ function App(props) {
         setCartItems([...updatedList])
       } else {
         const price = products.filter(product => product.value === value)[0].price;
-        setCartItems([...itemsList].concat([{ value: value, quantity: added, price: price }]));
+        setCartItems([...itemsList].concat([{ value: value, quantity: added, size: size, price: price }]));
       }
     }
   }
