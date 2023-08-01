@@ -53,7 +53,6 @@ function App(props) {
 
         <Route path="/" element={<Navbar />}>
 
-
           <Route index element={<Home />} />
 
           <Route path="men" element={<StorePage />}>
@@ -70,12 +69,9 @@ function App(props) {
             {products.map(item => {
               return (
                 <Route key={item.value} path={`${item.value}`} element={<ProductPage />} />
-                // <Route key={item.value} path={`product/:pathname`} element={<ProductPage />} />
               );
             })}
           </Route>
-
-
 
           <Route path="*" element={<ErrorPage />} />
 
