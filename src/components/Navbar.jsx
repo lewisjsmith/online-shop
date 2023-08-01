@@ -29,10 +29,14 @@ function Navbar() {
 
     }, [cartItems]);
 
+    function onClickOutside() {
+        setShow(false);
+    }
+
     return (
         <div className={"app"}>
 
-            <CardPanel show={show} setShow={setShow}/>
+            <CardPanel show={show} setShow={setShow} onClickOutside={onClickOutside}/>
 
             <nav>
                 <ul className={styles["nav-wrapper"]}>
