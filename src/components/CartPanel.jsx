@@ -26,6 +26,10 @@ export default function CartPanel(props) {
 
     }, [ onClickOutside ]);
 
+    const total = cartItems.reduce((prev, current) => {
+        return prev = prev + (current.price * current.quantity);
+    }, 0);
+
     return (
 
         <div ref={panelRef} className={props.show ? styles["show-panel"] : styles["hidden-panel"]}>
@@ -35,6 +39,10 @@ export default function CartPanel(props) {
             <Link to={"/cart"}>
                 <button>Continue to Cart</button>
             </Link>
+
+            <h3 style={{color: "white"}}>
+                Total: £{(Math.round(total *100)/100).toFixed(2)}
+            </h3>
 
             <ul className={styles["cart-list"]}>
                 {cartItems.map(item => {
