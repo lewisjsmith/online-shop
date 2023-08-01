@@ -16,6 +16,7 @@ export default function Cart() {
                     return (
                         <li key={item.value + "-" + item.size}>
                             <p>Product: {item.value}</p>
+                            <p>Size: {item.size}</p>
                             <p>Quantity: {item.quantity}</p>
                         </li>
                     );

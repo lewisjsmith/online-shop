@@ -84,11 +84,11 @@ export default function ProductPage() {
                 <div>
                     <select id="sizes" onChange={handleSizeChange}>
                         <option value={null}>- Please select -</option>
-                        <option value="xl">XL</option>
-                        <option value="l">L</option>
-                        <option value="m">M</option>
-                        <option value="s">S</option>
-                        <option value="xs">XS</option>
+                        <option value="XL">XL</option>
+                        <option value="L">L</option>
+                        <option value="M">M</option>
+                        <option value="S">S</option>
+                        <option value="XS">XS</option>
                     </select>
                 </div>
                 <div>

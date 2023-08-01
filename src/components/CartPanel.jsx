@@ -40,7 +40,7 @@ export default function CartPanel(props) {
                 {cartItems.map(item => {
                     return (
                         <li key={item.value + "-" + item.size} className={styles["list-item"]}>
-                            <CartCard item={item} quantity={item.quantity} />
+                            <CartCard item={item} quantity={item.quantity} size={item.size} />
                         </li>
                     );
                 })}
