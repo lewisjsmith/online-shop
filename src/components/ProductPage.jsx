@@ -4,11 +4,10 @@ import { ShopContext } from "../App";
 import styles from "../styles/ProductPage.module.css"
 import ImageSlider from "./ImageSlider";
 
-export default function ProductPage(props) {
+export default function ProductPage() {
 
     const { addToCart, products } = useContext(ShopContext);
-    const { pathname } = useLocation();
-    // const navigate = useNavigate();
+    const location = useLocation();
 
     const [pathId, setPathId] = useState("");
     const [productName, setProductName] = useState("");
@@ -24,8 +23,8 @@ export default function ProductPage(props) {
     }
 
     useEffect(() => {
-        setPathId(pathname.split("/").pop());
-    }, [])
+        setPathId(location.pathname.split("/").pop());
+    }, [location])
 
     useEffect(() => {
         if (pathId !== "") {
@@ -53,7 +52,7 @@ export default function ProductPage(props) {
 
     useEffect(() => {
         if (pathId !== "") {
-            let newImages = [...allImages];
+            let newImages = [];
             newImages.push(product.srcOne);
             newImages.push(product.srcTwo);
             setAllImages([...newImages]);

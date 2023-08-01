@@ -52,6 +52,8 @@ function App(props) {
       <Routes>
 
         <Route path="/" element={<Navbar />}>
+
+
           <Route index element={<Home />} />
 
           <Route path="men" element={<StorePage />}>
@@ -64,11 +66,16 @@ function App(props) {
 
           <Route path="cart" element={<Cart />} />
 
-          {products.map(item => {
-            return (
-              <Route key={item.value} exact={true} path={`/product/${item.value}`} element={<ProductPage location={props.location} />} />
-            );
-          })}
+          <Route path="product">
+            {products.map(item => {
+              return (
+                <Route key={item.value} path={`${item.value}`} element={<ProductPage />} />
+                // <Route key={item.value} path={`product/:pathname`} element={<ProductPage />} />
+              );
+            })}
+          </Route>
+
+
 
           <Route path="*" element={<ErrorPage />} />
 
