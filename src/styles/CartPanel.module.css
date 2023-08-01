@@ -4,9 +4,10 @@
     height: 100%;
     width: 30%;
     position: absolute;
-    right: 0;
-    left: auto;
     z-index: 1;
+
+    left: auto;
+    right: -30%;
 
     display: flex;
     flex-direction: column;
@@ -17,23 +18,16 @@
 }
 
 .hidden-panel {
-    background-color: black;
-    height: 100%;
-    width: 30%;
-    position: absolute;
-    right: 0;
-    left: auto;
     z-index: 1;
-
     transition: all 0.3s ease-in-out;
 }
 
 .show-panel {
-    transform: translateX(0%);
+    transform: translateX(-100%);
 }
 
 .hidden-panel {
-    transform: translateX(100%);
+    transform: translateX(0%);
 }
 
 .show-panel h3, 
