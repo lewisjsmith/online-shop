@@ -12,12 +12,22 @@ export default function StorePage() {
 
     const [productSort, setProductSort] = useState(null);
     const [productList, setProductList] = useState([]);
+    const [pageName, setPageName] = useState("");
+
+    const obj = useLocation();
 
     useEffect(() => {
         setProductList([...products])
     }, []);
 
-    const obj = useLocation();
+    useEffect(() => {
+        const pathname = obj.pathname;
+        const splitName = pathname.split("/");
+        const umbrella = splitName[1].charAt(0).toUpperCase() + splitName[1].slice(1) + "'s"
+        const subcategory = splitName[2].charAt(0).toUpperCase() + splitName[2].slice(1)
+        setPageName(umbrella + " " + subcategory);
+    }, [obj])
+
     const categoriesList = createFilter(obj.pathname);
 
     function handleChange(e) {
@@ -64,8 +74,13 @@ export default function StorePage() {
         }
     }) : productList;
 
+
+
     return (
         <div>
+            <h3>
+                {pageName}
+            </h3>
             <select onChange={handleChange}>
                 <option value={null}>By Release Date</option>
                 <option value={"highest"}>Price highest to lowest</option>
