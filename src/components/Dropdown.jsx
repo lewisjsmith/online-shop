@@ -14,9 +14,9 @@ export default function Dropdown(props) {
 
     return (
         <div className={styles["container"]}>
-            <h3 className={styles["header"]} onClick={() => setShow(!show)}>
+            <h2 className={styles["header"]} onClick={() => setShow(!show)} style={{padding: 0, margin: 0}}>
                 {capitalize(main)}
-            </h3>
+            </h2>
             <ul className={show ? styles["show-options"] : styles["hidden-options"]}>
                 {links.map(item => {
                     return <li key={item}><Link to={`/${main}/${item}`}>{capitalize(item)}</Link></li>

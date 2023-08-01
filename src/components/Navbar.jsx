@@ -41,9 +41,11 @@ function Navbar() {
 
             <nav>
                 <ul className={styles["nav-wrapper"]}>
+
                     <li className={styles["list-item"]}><Link to={"/"}><h2>Logo</h2></Link></li>
-                    <Dropdown main={"men"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/>
-                    <Dropdown main={"women"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/>
+
+                    <li className={styles["list-item"]}><Dropdown main={"men"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/></li>
+                    <li className={styles["list-item"]}><Dropdown main={"women"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/></li>
 
                     <li className={styles["list-item"]}><SearchBar /></li>
 
