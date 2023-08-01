@@ -4,6 +4,7 @@ import { ShopContext } from "../App";
 import styles from "../styles/Navbar.module.css";
 import Dropdown from "./Dropdown"
 import CardPanel from "./CartPanel";
+import SearchBar from "./SearchBar";
 
 function Navbar() {
 
@@ -43,7 +44,9 @@ function Navbar() {
                     <li className={styles["list-item"]}><Link to={"/"}><h2>Logo</h2></Link></li>
                     <Dropdown main={"men"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/>
                     <Dropdown main={"women"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/>
-                    <li className={styles["list-item"]}><input className={styles["search-bar"]} type="text" /></li>
+
+                    <li className={styles["list-item"]}><SearchBar /></li>
+
                     <li className={styles["list-item"]}><h2 onClick={() => setShow(!show)}>Cart {cartNumber === 0 ? "" : cartNumber}</h2></li>
                 </ul>
             </nav>

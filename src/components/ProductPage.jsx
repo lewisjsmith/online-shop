@@ -4,7 +4,7 @@ import { ShopContext } from "../App";
 import styles from "../styles/ProductPage.module.css"
 import ImageSlider from "./ImageSlider";
 
-export default function ProductPage() {
+export default function ProductPage(props) {
 
     const { addToCart, products } = useContext(ShopContext);
     const { pathname } = useLocation();

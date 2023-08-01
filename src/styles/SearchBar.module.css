@@ -1,0 +1,38 @@
+.container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    /* background-color: white; */
+  }
+
+.search-bar {
+    width: 100%;
+    height: 2ch;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.search-results-list {
+    width: 100%;
+
+    position: absolute;
+    z-index: 1;
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    top: 70%;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

@@ -26,11 +26,3 @@ nav {
     align-items: center;
     width: 100%;
 }
-
-.search-bar {
-    width: 100%;
-    height: 2ch;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}

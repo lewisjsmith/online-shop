@@ -38,7 +38,7 @@
 
 .show-options {
   visibility: visible;
-  animation: expand 300ms ease-in-out;
+  animation: expand 200ms ease-in-out;
   transform-origin: top;
 }
 

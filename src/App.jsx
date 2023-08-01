@@ -66,7 +66,7 @@ function App(props) {
 
           {products.map(item => {
             return (
-              <Route key={item.value} path={`product/${item.value}`} element={<ProductPage location={props.location} />} />
+              <Route key={item.value} exact={true} path={`/product/${item.value}`} element={<ProductPage location={props.location} />} />
             );
           })}
 
