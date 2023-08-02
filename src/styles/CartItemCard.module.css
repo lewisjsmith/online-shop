@@ -1,0 +1,37 @@
+.card-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 4fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2ch;
+}
+
+.image-container {
+    overflow: hidden;
+    object-fit: contain;
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    width: 120px;
+    height: 120px;
+}
+
+img {
+    width: 100%;
+    max-height: 100%;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1ch;
+}
+
+.card-details p,
+.card-details h4 {
+    padding: 0;
+    margin: 0;
+}

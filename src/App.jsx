@@ -15,6 +15,7 @@ export const ShopContext = createContext({
   products: [],
   cartItems: [],
   addToCart: () => { },
+  removeFromCart: () => { }
 });
 
 function App(props) {
@@ -22,7 +23,6 @@ function App(props) {
   const [cartItems, setCartItems] = useState([]);
   const products = productExamples;
 
-  // update for size
   const addToCart = (value, added, size) => {
     if (added > 0) {
 
@@ -47,8 +47,28 @@ function App(props) {
     }
   }
 
+  const removeFromCart = (value, quantity, size) => {
+    const vanillaList = [...cartItems];
+    const updatedList = vanillaList.map(item => {
+
+      if(item.value === value && item.size === size) {
+        if (quantity >= item.quantity) {
+          return "";
+        } else {
+          return {...item, quantity: (item.quantity - quantity)};
+        }
+      } else {
+        return {...item}
+      }
+    }).filter(space => space !== "");
+
+    setCartItems([...updatedList]);
+  }
+
+
+
   return (
-    <ShopContext.Provider value={{ products, cartItems, addToCart }}>
+    <ShopContext.Provider value={{ products, cartItems, addToCart, removeFromCart }}>
       <Routes>
 
         <Route path="/" element={<Navbar />}>

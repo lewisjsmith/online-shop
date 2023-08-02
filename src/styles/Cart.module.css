@@ -1,0 +1,32 @@
+.cart-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2ch;
+
+    height: 100%;
+    width: 100%;
+    padding: 2ch;
+}
+
+.cart-left {
+    background-color: rgb(200, 251, 253);
+}
+
+.cart-right {
+    background-color: rgb(194, 255, 194);
+}
+
+.cart-list {
+    height: 100%;
+    width: 100%;
+    text-indent: 0;
+    list-style-type: none;
+    padding: 2ch;
+    margin: 0;
+}
+
+.cart-list-item {
+    height: 15%;
+    width: 80%;
+}
