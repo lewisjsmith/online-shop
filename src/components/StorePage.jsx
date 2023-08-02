@@ -76,16 +76,22 @@ export default function StorePage() {
 
     return (
         <div className={styles["store-page-wrapper"]}>
-            <h3>
+
+            <h3 className={styles["page-name"]}>
                 {pageName}
             </h3>
-            <select onChange={handleChange}>
-                <option value={null}>By Release Date</option>
-                <option value={"highest"}>Price highest to lowest</option>
-                <option value={"lowest"}>Price lowest to highest</option>
-                <option value={"az"}>Name A to Z</option>
-                <option value={"za"}>Name Z to A</option>
-            </select>
+
+            <div className={styles["filter-menu-wrapper"]}>
+                <select className={styles["filter-menu"]} onChange={handleChange}>
+                    <option value={null}>By Release Date</option>
+                    <option value={"highest"}>Price highest to lowest</option>
+                    <option value={"lowest"}>Price lowest to highest</option>
+                    <option value={"az"}>Name A to Z</option>
+                    <option value={"za"}>Name Z to A</option>
+                </select>
+            </div>
+
+
             <ul className={styles["store-list"]}>
                 {categoriesList.length === 2 ? (
                     sortedProducts.filter(item => item.categories.includes(categoriesList[0]))
