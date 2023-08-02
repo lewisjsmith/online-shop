@@ -74,10 +74,11 @@ export default function ProductPage() {
     return (
         <div className={styles["page-wrapper"]}>
 
-            <ImageSlider allImages={allImages} />
+            <div className={styles["image-slider-wrapper"]}>
+                <ImageSlider allImages={allImages} />
+            </div>
 
             <div className={styles["info-wrapper"]}>
-                {/* Back button - requires history */}
                 <p className={styles["info-detail"]}>{productName}</p>
                 <p className={styles["info-detail"]}>£{(Math.round(productPrice * 100) / 100).toFixed(2)}</p>
                 <div>

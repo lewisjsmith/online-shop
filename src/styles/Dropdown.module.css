@@ -23,6 +23,8 @@
 
   list-style-type: none;
   padding: 0;
+  padding-top: 2ch;
+  padding-bottom: 2ch;
   margin: 0;
 
   top: 75%;
@@ -34,7 +36,7 @@
   justify-content: flex-start;
   align-items: center;
 
-  gap: 1ch;
+  gap: 2ch;
 }
 
 .show-options {
