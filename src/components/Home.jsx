@@ -9,6 +9,9 @@ export default function Home() {
             width: "100%",
             height: "100%",
         }}>
+            <h1 className={styles["home-title"]}>
+                Company Name
+            </h1>
             <div style={{
                 width: "100%",
                 height: "100%",
