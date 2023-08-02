@@ -1,0 +1,17 @@
+.button-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30ch;
+}
+
+.left, 
+.right {
+    width: 30ch;
+    height: 7ch;
+}
