@@ -24,15 +24,39 @@ export default function CartPanel(props) {
             document.removeEventListener('click', handleClickOutside, true);
         };
 
-    }, [ onClickOutside ]);
+    }, [onClickOutside]);
+
+    useEffect(() => {
+        panelRef.current.addEventListener("animationend", (e) => {
+            if (e.animationName.includes("retract")) {
+                props.setShow("off")
+            }
+        });
+    }, [])
 
     const total = cartItems.reduce((prev, current) => {
         return prev = prev + (current.price * current.quantity);
     }, 0);
 
+    const stylingTest = (function () {
+        switch (props.show) {
+            case ("on"):
+                return styles["show-panel"];
+                break;
+            case ("off"):
+                return styles["hidden-panel"]
+                break;
+            case ("animation"):
+                return styles["transitioning-panel"]
+                break;
+        }
+    })();
+
+    // console.log(stylingTest)
+
     return (
 
-        <div ref={panelRef} className={props.show ? styles["show-panel"] : styles["hidden-panel"]}>
+        <div ref={panelRef} className={stylingTest}>
 
             <h2>Cart</h2>
 
@@ -40,8 +64,8 @@ export default function CartPanel(props) {
                 <button>Continue to Cart</button>
             </Link>
 
-            <h3 style={{color: "white"}}>
-                Total: £{(Math.round(total *100)/100).toFixed(2)}
+            <h3 style={{ color: "white" }}>
+                Total: £{(Math.round(total * 100) / 100).toFixed(2)}
             </h3>
 
             <ul className={styles["cart-list"]}>

@@ -12,7 +12,7 @@ function Navbar() {
 
     const [cartNumber, setCartNumber] = useState(0);
 
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState("off");
 
     useEffect(() => {
 
@@ -31,25 +31,27 @@ function Navbar() {
     }, [cartItems]);
 
     function onClickOutside() {
-        setShow(false);
+        if (show === "on") {
+            setShow("animation");
+        }
     }
 
     return (
         <div className={"app"}>
 
-            <CardPanel show={show} setShow={setShow} onClickOutside={onClickOutside}/>
+            <CardPanel show={show} setShow={setShow} onClickOutside={onClickOutside} />
 
             <nav>
                 <ul className={styles["nav-wrapper"]}>
 
                     <li className={styles["list-item"]}><Link to={"/"}><h2>Logo</h2></Link></li>
 
-                    <li className={styles["list-item"]}><Dropdown main={"men"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/></li>
-                    <li className={styles["list-item"]}><Dropdown main={"women"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]}/></li>
+                    <li className={styles["list-item"]}><Dropdown main={"men"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} /></li>
+                    <li className={styles["list-item"]}><Dropdown main={"women"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} /></li>
 
                     <li className={styles["list-item"]}><SearchBar /></li>
 
-                    <li className={styles["list-item"]}><h2 onClick={() => setShow(!show)}>Cart {cartNumber === 0 ? "" : cartNumber}</h2></li>
+                    <li className={styles["list-item"]}><h2 onClick={() => setShow("on")}>Cart {cartNumber === 0 ? "" : cartNumber}</h2></li>
                 </ul>
             </nav>
 

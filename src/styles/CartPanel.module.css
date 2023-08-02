@@ -1,5 +1,6 @@
 .show-panel,
-.hidden-panel {
+.hidden-panel,
+.transitioning-panel {
     background-color: black;
     height: 100%;
     width: 30%;
@@ -13,9 +14,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
-    transition: transform 200ms ease-in-out;
-    /* transition: opacity 200ms ease-in-out 50ms; */
 }
 
 .hidden-panel {
@@ -25,30 +23,51 @@
 .show-panel {
     visibility: visible;
 
-    /* animation-name: expand, fadeIn;
+    animation-name: expand, fadeIn;
     animation-duration: 500ms, 800ms;
-    animation-delay: 0, 100ms; */
+    animation-delay: 0, 100ms;
 }
 
-/* @keyframes expand {
+@keyframes expand {
     0% {
-        transform: scaleX(0%);
-
+        transform: translateX(100%);
     }
-
     100% {
-        transform: scaleX(100%);
+        transform: translateX(0%);
     }
-} */
+}
 
 @keyframes fadeIn {
     0% {
         opacity: 0%;
     }
-
     100% {
         opacity: 100%;
     }
+}
+
+@keyframes retract {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.transitioning-panel {
+    animation-name: retract, fadeOut;
+    animation-duration: 500ms, 800ms;
+    animation-delay: 0, 100ms;
 }
 
 .hidden-panel {
@@ -56,6 +75,7 @@
 }
 
 .show-panel h2,
+.transitioning-panel h2,
 .hidden-panel h2 {
     color: white;
     background-color: black;
