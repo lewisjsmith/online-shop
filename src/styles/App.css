@@ -1,13 +1,21 @@
 body {
     margin: 0;
+    padding: 0;
     height: 100vh;
     width: 100vw;
-    overflow-y:scroll;
-    overflow-x: hidden;
+    box-sizing: border-box;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 #root,
 .app {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -16,4 +24,8 @@ body {
 
 .app {
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }

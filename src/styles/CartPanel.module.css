@@ -7,30 +7,55 @@
     z-index: 1;
 
     left: auto;
-    right: -30%;
+    right: 0;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 
-    transition: all 0.3s ease-in-out;
+    transition: transform 200ms ease-in-out;
+    /* transition: opacity 200ms ease-in-out 50ms; */
 }
 
 .hidden-panel {
     z-index: 1;
-    transition: all 0.3s ease-in-out;
 }
 
 .show-panel {
-    transform: translateX(-100%);
+    visibility: visible;
+
+    /* animation-name: expand, fadeIn;
+    animation-duration: 500ms, 800ms;
+    animation-delay: 0, 100ms; */
+}
+
+/* @keyframes expand {
+    0% {
+        transform: scaleX(0%);
+
+    }
+
+    100% {
+        transform: scaleX(100%);
+    }
+} */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
 
 .hidden-panel {
-    transform: translateX(0%);
+    visibility: hidden;
 }
 
-.show-panel h2, 
+.show-panel h2,
 .hidden-panel h2 {
     color: white;
     background-color: black;

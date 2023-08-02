@@ -75,7 +75,7 @@ export default function StorePage() {
     }) : productList;
 
     return (
-        <div>
+        <div className={styles["store-page-wrapper"]}>
             <h3>
                 {pageName}
             </h3>
