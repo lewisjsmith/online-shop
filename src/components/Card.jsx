@@ -18,7 +18,7 @@ export default function Card(props) {
 
     return (
         <div>
-            <Link to={`/product/${props.item.value}`}>
+            <Link to={`/product/${props.item.value}`} style={{textDecoration: "none"}}>
 
                 <div className={styles["card"]} >
                     

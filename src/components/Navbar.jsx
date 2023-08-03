@@ -44,14 +44,17 @@ function Navbar() {
             <nav>
                 <ul className={styles["nav-wrapper"]}>
 
-                    <li className={styles["list-item"]}><Link to={"/"}><h2>Logo</h2></Link></li>
+                    <li className={styles["logo-wrapper"]}><Link to={"/"} style={{ textDecoration: "none" }}><h2>Stoked</h2></Link></li>
 
-                    <li className={styles["list-item"]}><Dropdown main={"men"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} /></li>
-                    <li className={styles["list-item"]}><Dropdown main={"women"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} /></li>
+                    <div className={styles["sections-wrapper"]}>
+                        <li className={styles["left-section"]}><Dropdown main={"men"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} /></li>
+                        <li className={styles["right-section"]}><Dropdown main={"women"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} /></li>
+                    </div>
+                    <div className={styles["buttons-wrapper"]}>
+                        <li className={styles["search-bar"]}><SearchBar /></li>
+                        <li className={styles["cart-icon"]}><h2 onClick={() => setShow("on")}>Cart {cartNumber === 0 ? "" : cartNumber}</h2></li>
+                    </div>
 
-                    <li className={styles["list-item"]}><SearchBar /></li>
-
-                    <li className={styles["list-item"]}><h2 onClick={() => setShow("on")}>Cart {cartNumber === 0 ? "" : cartNumber}</h2></li>
                 </ul>
             </nav>
 

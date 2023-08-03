@@ -18,12 +18,12 @@ export default function CartItemCard(props) {
     return (
 
         <div className={styles["card-wrapper"]}>
-            <Link to={`/product/${value}`}>
+            <Link to={`/product/${value}`} style={{textDecoration: "none"}}>
                 <div className={styles["image-container"]}>
                     <img src={src}></img>
                 </div>
             </Link>
-            <Link to={`/product/${value}`}>
+            <Link to={`/product/${value}`} style={{textDecoration: "none"}}>
                 <div className={styles["card-details"]}>
                     <h4>£{(Math.round(price * 100) / 100).toFixed(2)}</h4>
                     <p>{value}</p>

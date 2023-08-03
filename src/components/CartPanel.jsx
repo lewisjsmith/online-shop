@@ -60,7 +60,7 @@ export default function CartPanel(props) {
 
             <h2>Cart</h2>
 
-            <Link to={"/cart"}>
+            <Link to={"/cart"} style={{textDecoration: "none"}}>
                 <button>Continue to Cart</button>
             </Link>
 

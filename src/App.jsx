@@ -9,6 +9,8 @@ import StorePage from './components/StorePage'
 import Home from './components/Home'
 import ProductPage from './components/ProductPage';
 
+import "./fonts/Oxygen-Bold.ttf";
+
 import './styles/App.css'
 
 export const ShopContext = createContext({

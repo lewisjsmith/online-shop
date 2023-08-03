@@ -20,7 +20,7 @@ export default function SearchBar() {
                 {products.map(item => {
                     if (item.value.split("-").includes(query) || item.value.charAt(0) === query) {
                         return <li key={item.value}>
-                            <Link onClick={() => setQuery("") } to={`/product/${item.value}`}>{item.categories[0]} &gt; {item.value}</Link>
+                            <Link onClick={() => setQuery("") } to={`/product/${item.value}`} style={{textDecoration: "none"}}>{item.categories[0]} &gt; {item.value}</Link>
                         </li>
                     }
                 })}

@@ -14,13 +14,15 @@ export default function Dropdown(props) {
 
     return (
         <div className={styles["container"]}>
-            <h2 className={styles["header"]} onClick={() => setShow(!show)} style={{ padding: 0, margin: 0 }}>
-                {capitalize(main)}
-            </h2>
+            <div className={styles["header-wrapper"]}>
+                <h2 className={styles["header"]} onClick={() => setShow(!show)} style={{ padding: 0, margin: 0 }}>
+                    {capitalize(main)}
+                </h2>
+            </div>
             <ul className={show ? styles["show-options"] : styles["hidden-options"]}>
-                <li key={"main"}><Link to={`/${main}/`}>Shop All</Link></li>
+                <li key={"main"}><Link to={`/${main}/`} style={{ textDecoration: "none" }}>Shop All</Link></li>
                 {links.map(item => {
-                    return <li key={item}><Link to={`/${main}/${item}`}>{capitalize(item)}</Link></li>
+                    return <li key={item}><Link to={`/${main}/${item}`} style={{ textDecoration: "none" }}>{capitalize(item)}</Link></li>
                 })}
             </ul>
         </div>

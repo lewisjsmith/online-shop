@@ -1,4 +1,13 @@
+@font-face {
+    font-family: "OxygenBold";
+    src: local("OxygenBold"),
+    url("../fonts/Oxygen-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
 body {
+    font-family: "OxygenBold";
+
     margin: 0;
     padding: 0;
     height: 100vh;

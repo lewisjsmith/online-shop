@@ -8,10 +8,23 @@
 }
 
 .header {
-  width: 100%;
+  padding: 0;
+  padding-top: 1ch;
+  margin: 0;
+  width: auto;
   text-align: center;
-  background-color: blanchedalmond;
+  background-color: rgb(255, 255, 255);
   z-index: 2;
+
+  border-bottom: solid;
+  border-color: white;
+
+  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.header:hover {
+  border-color: black;
 }
 
 .show-options,
@@ -29,7 +42,7 @@
 
   top: 75%;
 
-  background-color: blanchedalmond;
+  background-color: rgb(255, 255, 255);
 
   display: flex;
   flex-direction: column;

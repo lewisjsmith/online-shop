@@ -5,7 +5,7 @@ function ErrorPage() {
     return (
         <>
             <p>Uh oh! It looks like you're off-piste!</p>
-            <Link replace to={"/"}>Return Home</Link>
+            <Link replace to={"/"} style={{textDecoration: "none"}}>Return Home</Link>
         </>
     )
 }
