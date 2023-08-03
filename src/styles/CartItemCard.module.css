@@ -1,4 +1,6 @@
 .card-wrapper {
+    position: relative;
+
     display: grid;
     grid-template-columns: 2fr 4fr 1fr;
     grid-template-rows: 1fr;
@@ -6,6 +8,8 @@
 }
 
 .image-container {
+    position: relative;
+
     overflow: hidden;
     object-fit: contain;
 
@@ -18,11 +22,15 @@
 }
 
 img {
+    position: relative;
+
     width: 100%;
     max-height: 100%;
 }
 
 .card-details {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,6 +40,7 @@ img {
 
 .card-details p,
 .card-details h4 {
+    position: relative;
     padding: 0;
     margin: 0;
 }

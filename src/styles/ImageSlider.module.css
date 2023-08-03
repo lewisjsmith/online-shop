@@ -13,10 +13,12 @@
 
     position: absolute;
 
-    transition: all 1.3s ease-in-out
+    transition: all 1.3s ease-in-out;
 }
 
 .sliding-image {
+    position: relative;
+
     width: 600px;
     height: 600px;
 }

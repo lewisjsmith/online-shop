@@ -32,7 +32,7 @@ export default function Home() {
             height: "100%",
         }}>
             <h1 className={styles["home-title"]}>
-                Company Name
+                Stoked
             </h1>
             <div style={{
                 width: "100%",
@@ -49,7 +49,7 @@ export default function Home() {
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%,-50%)",
-                    zIndex: "-1"
+                    zIndex: "-2"
                 }}>
                     <source src={vid} type="video/mp4" />
                 </video>

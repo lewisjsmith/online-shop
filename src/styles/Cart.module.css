@@ -1,4 +1,5 @@
 .cart-wrapper {
+    position: relative;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr;
@@ -10,14 +11,17 @@
 }
 
 .cart-left {
+    position: relative;
     background-color: rgb(200, 251, 253);
 }
 
 .cart-right {
+    position: relative;
     background-color: rgb(194, 255, 194);
 }
 
 .cart-list {
+    position: relative;
     height: 100%;
     width: 100%;
     text-indent: 0;
@@ -27,6 +31,7 @@
 }
 
 .cart-list-item {
+    position: relative;
     height: 15%;
     width: 80%;
 }

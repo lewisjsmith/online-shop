@@ -23,6 +23,7 @@
 
 .left, 
 .right {
+    position: relative;
     width: 30ch;
     height: 7ch;
 }

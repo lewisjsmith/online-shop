@@ -14,17 +14,18 @@
 }
 
 .image-wrapper {
+    position: relative;
     aspect-ratio: 1/1;
     overflow: hidden;
 }
 
 .card-image {
+    position: relative;
     width: 100%;
     height: 100%;
 
     object-position: top;
     object-fit: contain;
-    z-index: -1;
 }
 
 .card-image:hover {
@@ -33,6 +34,7 @@
 }
 
 .card-text-wrapper {
+    position: relative;
     right: 0;
     left: auto;
     bottom: 0;
@@ -49,6 +51,7 @@
 }
 
 .card-text {
+    position: relative;
     padding: 0;
     margin: 0;
     font-weight: bold;

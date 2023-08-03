@@ -6,6 +6,8 @@
 }
 
 body {
+    position: relative;
+
     font-family: "OxygenBold";
 
     margin: 0;

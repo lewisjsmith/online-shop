@@ -1,12 +1,16 @@
 a {
+    position: relative;
     color: rgb(0, 0, 0);
 }
 
 nav {
+    position: relative;
     color: rgb(0, 0, 0);
+    z-index: 9999;
 }
 
 .nav-wrapper {
+
     font-size: 0.8rem;
 
     box-sizing: border-box;
@@ -32,18 +36,21 @@ nav {
 }
 
 .logo-wrapper {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
 .sections-wrapper {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
 
 .buttons-wrapper {
+    position: relative;
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr;
@@ -51,12 +58,14 @@ nav {
 }
 
 .search-bar {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
 
 .cart-icon {
+    position: relative;
     display: flex;
     justify-content: flex-end;
 }
