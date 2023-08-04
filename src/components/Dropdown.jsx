@@ -24,9 +24,9 @@ export default function Dropdown(props) {
                 </div>
 
             <ul className={show ? styles["show-options"] : styles["hidden-options"]}>
-                <li key={"main"}><Link to={`/${main}/`} style={{ textDecoration: "none" }}>Shop All</Link></li>
+                <li className={styles["options-item"]} key={"main"}><Link to={`/${main}/`} style={{ textDecoration: "none" }}>Shop All</Link></li>
                 {links.map(item => {
-                    return <li key={item}><Link to={`/${main}/${item}`} style={{ textDecoration: "none" }}>{capitalize(item)}</Link></li>
+                    return <li className={styles["options-item"]} key={item}><Link to={`/${main}/${item}`} style={{ textDecoration: "none" }}>{capitalize(item)}</Link></li>
                 })}
             </ul>
 

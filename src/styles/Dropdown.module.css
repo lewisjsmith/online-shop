@@ -23,7 +23,7 @@
   border-bottom: solid;
   border-color: transparent;
 
-  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: border-color 0.3s ease-in-out;
 }
 
 .header:hover {
@@ -35,8 +35,8 @@
   transform: scale(0.5);
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  
+  transform: translate(-50%, -50%);
+
 }
 
 .show-options,
@@ -46,7 +46,7 @@
   width: 100%;
 
   position: absolute;
-  
+
   padding: 0;
   padding-top: 2ch;
   padding-bottom: 2ch;
@@ -65,6 +65,7 @@
 
   z-index: -1;
 
+  font-size: 1rem;
 }
 
 .show-options {
@@ -75,6 +76,17 @@
 
 .hidden-options {
   visibility: hidden;
+}
+
+.options-item {
+  border-bottom: solid;
+  border-color: transparent;
+
+  transition: border-color 0.3s ease-in-out;
+}
+
+.options-item:hover {
+  border-color: black;
 }
 
 @keyframes expand {

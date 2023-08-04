@@ -5,6 +5,7 @@ import styles from "../styles/Navbar.module.css";
 import Dropdown from "./Dropdown"
 import CardPanel from "./CartPanel";
 import SearchBar from "./SearchBar";
+import cartSvg from "../assets/cart.svg";
 
 function Navbar() {
 
@@ -52,7 +53,15 @@ function Navbar() {
                     </div>
                     <div className={styles["buttons-wrapper"]}>
                         <li className={styles["search-bar"]}><SearchBar /></li>
-                        <li className={styles["cart-icon"]}><h2 onClick={() => setShow("on")}>Cart {cartNumber === 0 ? "" : cartNumber}</h2></li>
+                        <li className={styles["cart-icon"]}>
+                            <div className={styles["svg-wrapper"]} onClick={() => setShow("on")}>
+                                <img className={styles["svg-img"]} viewBox="0 0 100 100" src={cartSvg} />
+                            </div>
+                            <div className={styles["cart-number-wrapper"]} style={cartNumber > 0 ? {backgroundColor: "black"} : null}>
+                                <h2 className={styles["cart-number"]}>{cartNumber === 0 ? "" : cartNumber}</h2>
+                            </div>
+
+                        </li>
                     </div>
 
                 </ul>
