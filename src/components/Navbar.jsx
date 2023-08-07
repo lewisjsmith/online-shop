@@ -85,11 +85,11 @@ function Navbar() {
                 <ul className={styles["nav-wrapper"]}>
                     <div className={styles["sections-wrapper"]}>
                         <button type="button" className={styles["left-button"]} onClick={() => setMenDrop(!womenDrop)}>
-                            <h2>Men</h2>
+                            <h2 className={styles["option-hovers"]}>Men</h2>
                         </button>
                         <h2>|</h2>
                         <button type="button" className={styles["right-button"]} onClick={() => setWomenDrop(!womenDrop)}>
-                            <h2>Women</h2>
+                            <h2 className={styles["option-hovers"]}>Women</h2>
                         </button>
                     </div>
                     <li className={styles["logo-wrapper"]}><Link to={"/"} style={{ textDecoration: "none" }}><h2>Stoked</h2></Link></li>
