@@ -39,19 +39,23 @@ export default function SearchBar() {
 
     return (
         <div className={styles["container"]}>
+
             <input ref={ref} className={show ? styles["search-bar"] : styles["search-bar-hidden"]} type="text" onChange={handleChange}></input>
-            <ul className={query !== "" ? styles["search-results-list"] : styles["search-results-list-hidden"]  } >
+
+            <ul className={query.trim() !== ""  && show ? styles["search-results-list"] : styles["search-results-list-hidden"]  } >
                 {products.map(item => {
-                    if (item.value.split("-").includes(query) || item.value.charAt(0) === query) {
+                    if (item.value.includes(query)) {
                         return <li key={item.value} className={styles["search-result-item"]}>
-                            <Link onClick={() => setQuery("")} to={`/product/${item.value}`} style={{ textDecoration: "none" }}>{item.categories[0]} &gt; {item.value}</Link>
+                            <Link onClick={() => setQuery("")} to={`/product/${item.value}`} style={{ textDecoration: "none" }}>{item.categories[0]} &gt; {item.value.split("-").join(" ")}</Link>
                         </li>
                     }
                 })}
             </ul>
+
             <button className={show ? styles["svg-wrapper-hidden"] : styles["svg-wrapper"]} onClick={() => setShow(true)}>
                 <img className={styles["svg-img"]} viewBox="0 0 100 100" src={searchSvg} />
             </button>
+
         </div>
     );
 }

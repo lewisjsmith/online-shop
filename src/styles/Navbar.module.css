@@ -27,7 +27,7 @@ nav {
     list-style: none;
 
     display: grid;
-    grid-template-columns: 3fr 5fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-content: center;
 
     background-color: rgb(255, 255, 255);
