@@ -84,8 +84,6 @@ function Navbar() {
             <nav>
                 <ul className={styles["nav-wrapper"]}>
 
-                    <li className={styles["logo-wrapper"]}><Link to={"/"} style={{ textDecoration: "none" }}><h2>Stoked</h2></Link></li>
-
                     <div className={styles["sections-wrapper"]}>
 
                         <li ref={menRef} className={styles["left-section"]} onClick={() => setMenDrop(true)}>
@@ -97,6 +95,10 @@ function Navbar() {
                         </li>
 
                     </div>
+
+                    <li className={styles["logo-wrapper"]}><Link to={"/"} style={{ textDecoration: "none" }}><h2>Stoked</h2></Link></li>
+
+
                     <div className={styles["buttons-wrapper"]}>
                         <li className={styles["search-bar"]}><SearchBar /></li>
                         <li className={styles["cart-icon"]}>
