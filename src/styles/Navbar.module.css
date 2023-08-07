@@ -4,7 +4,8 @@ a {
 }
 
 nav {
-    position: relative;
+    position: fixed;
+    width: 100vw;
     color: rgb(0, 0, 0);
     z-index: 9998;
 }
@@ -35,6 +36,17 @@ nav {
     box-shadow: 0px 2px 15px rgb(173, 173, 173);
 }
 
+.left-button,
+.right-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
 .logo-wrapper {
     position: relative;
     display: flex;
@@ -44,9 +56,9 @@ nav {
 
 .sections-wrapper {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+
+    gap: 3ch;
 }
 
 .buttons-wrapper {
@@ -57,10 +69,8 @@ nav {
     justify-content: flex-end;
 }
 
-.search-bar {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
+.search-wrapper {
+    height: 100%;
     width: 100%;
 }
 
@@ -78,15 +88,23 @@ nav {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(0%,-50%);
+    transform: translate(0%, -50%);
 
     width: 40px;
     height: 40px;
+
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .cart-number-wrapper {
     position: absolute;
-    
+
     top: 50%;
     left: 50%;
     transform: translate(150%, -120%);

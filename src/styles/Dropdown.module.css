@@ -1,63 +1,20 @@
-.container {
-  position: relative;
-  height: 100%;
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header {
-  position: relative;
-  padding: 0;
-  padding-top: 1ch;
-  margin: 0;
-
-  width: auto;
-
-  text-align: center;
-
-  background-color: transparent;
-
-  border-bottom: solid;
-  border-color: transparent;
-
-  transition: border-color 0.3s ease-in-out;
-}
-
-.header:hover {
-  border-color: black;
-}
-
-.ski-svg {
-  position: absolute;
-  transform: scale(0.5);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-}
-
 .show-options,
 .hidden-options {
   list-style-type: none;
 
-  width: 100%;
+  width: 40vw;
 
-  position: absolute;
+  position: fixed;
 
-  padding: 0;
+  padding-left: 2ch;
   padding-top: 2ch;
   padding-bottom: 2ch;
   margin: 0;
 
-  top: 120%;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   gap: 2ch;
 
   background-color: rgb(255, 255, 255);

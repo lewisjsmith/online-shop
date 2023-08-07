@@ -1,6 +1,7 @@
 .container {
     position: relative;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,30 +10,76 @@
     /* background-color: white; */
   }
 
-.search-bar {
+.search-bar,
+.search-bar-hidden {
     position: relative;
     width: 100%;
-    height: 2ch;
+    height: 3ch;
     display: flex;
     justify-content: center;
     align-content: center;
+    z-index: 1;
+
+    padding: 1ch;
+
+    visibility: visible;
 }
 
-.search-results-list {
-    width: 100%;
+.search-bar-hidden {
+    visibility: hidden;
+}
+
+.search-results-list,
+.search-results-list-hidden {
+    width: 120%;
 
     position: absolute;
 
     list-style-type: none;
-    padding: 0;
+    padding: 1ch;
     margin: 0;
-
-    top: 70%;
-
-    background-color: white;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+
+    z-index: -1;
+
+    background-color: white;
+    box-shadow: 0px 2px 15px rgb(173, 173, 173);
+
+    top: 130%;
+}
+
+.search-results-list-hidden {
+    visibility: hidden;
+}
+
+.search-result-item {
+    /* position: absolute; */
+}
+
+.svg-wrapper,
+.svg-wrapper-hidden {
+    position: absolute;
+    right: -5%;
+    top: 15%;
+    height: 80%;
+    width: auto;
+    z-index: 2;
+
+    visibility: visible;
+
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.svg-wrapper-hidden {
+    visibility: hidden;
 }

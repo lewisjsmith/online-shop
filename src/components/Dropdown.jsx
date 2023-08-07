@@ -12,23 +12,11 @@ export default function Dropdown(props) {
     }
 
     return (
-        <div className={styles["container"]}>
-
-            <div className={styles["header-wrapper"]}>
-                {/* <img className={styles["ski-svg"]} src={skiSet} height="50" width="100" /> */}
-                <h2 className={styles["header"]} style={{ padding: 0, margin: 0 }}>
-                    {capitalize(main)}
-                </h2>
-            </div>
-
             <ul className={drop ? styles["show-options"] : styles["hidden-options"]}>
                 <li className={styles["options-item"]} key={main}><Link to={`/${main}/`} style={{ textDecoration: "none" }}>Shop All</Link></li>
                 {links.map(item => {
                     return <li className={styles["options-item"]} key={item}><Link to={`/${main}/${item}`} style={{ textDecoration: "none" }}>{capitalize(item)}</Link></li>
                 })}
             </ul>
-
-        </div>
-
     );
 }

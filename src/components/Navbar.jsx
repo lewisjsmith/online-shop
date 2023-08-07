@@ -83,36 +83,38 @@ function Navbar() {
 
             <nav>
                 <ul className={styles["nav-wrapper"]}>
-
                     <div className={styles["sections-wrapper"]}>
-
-                        <li ref={menRef} className={styles["left-section"]} onClick={() => setMenDrop(true)}>
-                            <Dropdown main={"men"} drop={menDrop} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
-                        </li>
-
-                        <li ref={womenRef} className={styles["right-section"]} onClick={() => setWomenDrop(true)}>
-                            <Dropdown main={"women"} drop={womenDrop} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
-                        </li>
-
+                        <button type="button" className={styles["left-button"]} onClick={() => setMenDrop(!womenDrop)}>
+                            <h2>Men</h2>
+                        </button>
+                        <h2>|</h2>
+                        <button type="button" className={styles["right-button"]} onClick={() => setWomenDrop(!womenDrop)}>
+                            <h2>Women</h2>
+                        </button>
                     </div>
-
                     <li className={styles["logo-wrapper"]}><Link to={"/"} style={{ textDecoration: "none" }}><h2>Stoked</h2></Link></li>
-
-
                     <div className={styles["buttons-wrapper"]}>
-                        <li className={styles["search-bar"]}><SearchBar /></li>
+                        <li><SearchBar /></li>
                         <li className={styles["cart-icon"]}>
-                            <div className={styles["svg-wrapper"]} onClick={() => setShow("on")}>
+                            <button type="button" className={styles["svg-wrapper"]} onClick={() => setShow("on")}>
                                 <img className={styles["svg-img"]} viewBox="0 0 100 100" src={cartSvg} />
-                            </div>
+                            </button>
                             <div className={styles["cart-number-wrapper"]} style={cartNumber > 0 ? { backgroundColor: "black" } : null}>
                                 <h2 className={styles["cart-number"]}>{cartNumber === 0 ? "" : cartNumber}</h2>
                             </div>
-
                         </li>
                     </div>
-
                 </ul>
+
+                <div>
+                    <div ref={menRef}>
+                        <Dropdown main={"men"} drop={menDrop} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
+                    </div>
+                    <div ref={womenRef}>
+                        <Dropdown main={"women"} drop={womenDrop} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
+                    </div>
+                </div>
+
             </nav>
 
             <Outlet />
