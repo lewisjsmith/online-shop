@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { ShopContext } from "../App";
 import styles from "../styles/Navbar.module.css";
@@ -13,7 +13,46 @@ function Navbar() {
 
     const [cartNumber, setCartNumber] = useState(0);
 
+    // card panel
     const [show, setShow] = useState("off");
+
+    const [menDrop, setMenDrop] = useState(false);
+    const [womenDrop, setWomenDrop] = useState(false);
+
+    const menRef = useRef(null);
+    const womenRef = useRef(null);
+
+    useEffect(() => {
+        const handleClick = (e) => {
+            if (menRef && !menRef.current.contains(e.target)) {
+                menHide && menHide();
+            }
+        };
+        document.addEventListener('click', handleClick, true);
+        return () => {
+            document.removeEventListener('click', handleClick, true);
+        }
+    }, []);
+
+    function menHide() {
+        setMenDrop(false);
+    }
+
+    useEffect(() => {
+        const handleClick = (e) => {
+            if (womenRef && !womenRef.current.contains(e.target)) {
+                womenHide && womenHide();
+            }
+        };
+        document.addEventListener('click', handleClick, true);
+        return () => {
+            document.removeEventListener('click', handleClick, true);
+        }
+    }, []);
+
+    function womenHide() {
+        setWomenDrop(false);
+    }
 
     useEffect(() => {
 
@@ -48,8 +87,15 @@ function Navbar() {
                     <li className={styles["logo-wrapper"]}><Link to={"/"} style={{ textDecoration: "none" }}><h2>Stoked</h2></Link></li>
 
                     <div className={styles["sections-wrapper"]}>
-                        <li className={styles["left-section"]}><Dropdown main={"men"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} /></li>
-                        <li className={styles["right-section"]}><Dropdown main={"women"} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} /></li>
+
+                        <li ref={menRef} className={styles["left-section"]} onClick={() => setMenDrop(true)}>
+                            <Dropdown main={"men"} drop={menDrop} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
+                        </li>
+
+                        <li ref={womenRef} className={styles["right-section"]} onClick={() => setWomenDrop(true)}>
+                            <Dropdown main={"women"} drop={womenDrop} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
+                        </li>
+
                     </div>
                     <div className={styles["buttons-wrapper"]}>
                         <li className={styles["search-bar"]}><SearchBar /></li>
@@ -57,7 +103,7 @@ function Navbar() {
                             <div className={styles["svg-wrapper"]} onClick={() => setShow("on")}>
                                 <img className={styles["svg-img"]} viewBox="0 0 100 100" src={cartSvg} />
                             </div>
-                            <div className={styles["cart-number-wrapper"]} style={cartNumber > 0 ? {backgroundColor: "black"} : null}>
+                            <div className={styles["cart-number-wrapper"]} style={cartNumber > 0 ? { backgroundColor: "black" } : null}>
                                 <h2 className={styles["cart-number"]}>{cartNumber === 0 ? "" : cartNumber}</h2>
                             </div>
 
