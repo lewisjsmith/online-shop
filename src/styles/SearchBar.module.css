@@ -46,8 +46,8 @@
 
     z-index: -1;
 
-    background-color: white;
-    box-shadow: 0px 2px 15px rgb(173, 173, 173);
+    background-color: var(--bg-color);
+    box-shadow: 0px 2px 15px var(--bx-shadow);
 
     top: 130%;
 }

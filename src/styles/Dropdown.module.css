@@ -16,8 +16,8 @@
   align-items: flex-start;
   gap: 2ch;
 
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 2px 15px rgb(173, 173, 173);
+  background-color: var(--bg-color);
+  box-shadow: 0px 2px 15px var(--bx-shadow);
 
   z-index: -1;
 

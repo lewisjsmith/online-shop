@@ -31,6 +31,7 @@ body::-webkit-scrollbar {
     padding: 0;
     height: 100%;
     width: 100%;
+    color: var(--font-base);
 }
 
 .app {
@@ -39,4 +40,8 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    --bg-color: rgb(255, 255, 255);
+    --bx-shadow: rgb(236, 236, 236);
+    --font-base: rgb(24, 19, 41);
 }

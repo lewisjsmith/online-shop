@@ -1,12 +1,12 @@
 a {
     position: relative;
-    color: rgb(0, 0, 0);
+    color: var(--font-base);
 }
 
 nav {
     position: fixed;
     width: 100vw;
-    color: rgb(0, 0, 0);
+    color: var(--font-base);
     z-index: 9998;
 }
 
@@ -30,10 +30,9 @@ nav {
     grid-template-columns: 1fr 1fr 1fr;
     align-content: center;
 
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-
-    box-shadow: 0px 2px 15px rgb(173, 173, 173);
+    background-color: var(--bg-color);
+    color: var(--font-base);
+    box-shadow: 0px 2px 15px var(--bx-shadow);
 }
 
 .left-button,
@@ -94,12 +93,12 @@ nav {
     height: 40px;
 
     background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 .cart-number-wrapper {
