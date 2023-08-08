@@ -4,28 +4,6 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
 
-    // const [index, setIndex] = useState(0);
-    // const [src, setSrc] = useState(vid1);
-    // const videoRef = useRef(null);
-
-    // const videoList = [vid1, vid2, vid3, vid4];
-
-    // function handleOnEnded() {
-    //     if(index === 3) {
-    //         setIndex(0);
-    //     } else {
-    //         setIndex(index + 1);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     setSrc(videoList[index]);
-    // }, [index])
-
-    // useEffect(() => {
-    //     videoRef.current.load();
-    // }, [src])
-
     return (
         <div className={styles["home-page"]} style={{
             width: "100%",
@@ -46,7 +24,7 @@ export default function Home() {
                     width: "auto",
                     height: "auto",
                     position: " absolute",
-                    top: "60%",
+                    top: "50%",
                     left: "50%",
                     transform: "translate(-50%,-50%)",
                     zIndex: "-2"
