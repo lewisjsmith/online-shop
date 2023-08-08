@@ -15,7 +15,7 @@ export default function ProductPage() {
     const [allImages, setAllImages] = useState([]);
     const [product, setProduct] = useState({});
 
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const [size, setSize] = useState(null);
 
     function handleSizeChange(e) {
@@ -66,7 +66,7 @@ export default function ProductPage() {
 
     function decreaseQuantity() {
         const x = quantity;
-        if (x > 0) {
+        if (x > 1) {
             setQuantity(x - 1);
         }
     }
@@ -83,7 +83,7 @@ export default function ProductPage() {
                 <p className={styles["info-detail"]}>£{(Math.round(productPrice * 100) / 100).toFixed(2)}</p>
                 <div>
                     <select id="sizes" onChange={handleSizeChange}>
-                        <option value={null}>- Please select -</option>
+                        <option value={"none"}>- Please select -</option>
                         <option value="XL">XL</option>
                         <option value="L">L</option>
                         <option value="M">M</option>
@@ -99,9 +99,9 @@ export default function ProductPage() {
                     <button onClick={increaseQuantity}>+</button>
                 </div>
                 <button onClick={() => {
-                    size ? (
+                    size && size !== "none" ? (
                         addToCart(product.value, quantity, size),
-                        setQuantity(0)
+                        setQuantity(1)
                     ) : null
                 }}>Add to cart</button>
             </div>
