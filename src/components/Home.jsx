@@ -33,8 +33,8 @@ export default function Home() {
                 </video>
             </div>
             <div className={styles["button-wrapper"]}>
-                <Link to={"/men/"}><button className={styles["left"]} style={{textDecoration: "none"}}>Shop Men</button></Link>
-                <Link to={"/women/"}><button className={styles["right"]} style={{textDecoration: "none"}}>Shop Women</button></Link>
+                <Link to={"/men/"}><button className={styles["left"]} style={{ textDecoration: "none" }}>SHOP MEN</button></Link>
+                <Link to={"/women/"}><button className={styles["right"]} style={{ textDecoration: "none" }}>SHOP WOMEN</button></Link>
             </div>
         </div>
     );

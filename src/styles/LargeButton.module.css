@@ -1,4 +1,5 @@
-.button-purchase {
+.button-purchase,
+.button-purchase-click {
     box-sizing: border-box;
     padding: 0.5rem 1rem;
     margin: 0;
@@ -11,4 +12,9 @@
 
 .button-purchase:hover {
     background-color: rgb(35, 136, 35);
+}
+
+.button-purchase-click {
+    background-color: rgb(35, 136, 35);
+    transform: scale(0.9);
 }

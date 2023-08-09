@@ -1,29 +1,41 @@
 .home-title {
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     color: white;
     font-size: 5rem;
-
+    z-index: 2;
+    margin: 0;
+    padding: 0;
     white-space: nowrap;
 }
 
 .button-wrapper {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
-    transform: translate(-50%,-50%);
-
+    transform: translate(-50%, -50%);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 30ch;
+    gap: 20%;
 }
 
-.left, 
+.left,
 .right {
     position: relative;
-    width: 30ch;
-    height: 7ch;
+    border-style: none;
+    background-color: rgba(0, 0, 0, 0.26);
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    width: 20rem;
+    height: 4rem;
+}
+
+.left:hover,
+.right:hover {
+    background-color: rgba(0, 0, 0, 0.596);
 }
