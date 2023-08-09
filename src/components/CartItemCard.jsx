@@ -31,7 +31,7 @@ export default function CartItemCard(props) {
                     <p>Quantity: {quantity}</p>
                 </div>
             </Link>
-            <div>
+            <div className={styles["button-wrapper"]}>
                 <button type="button" onClick={() => removeFromCart(value, quantity, size)}>X</button>
             </div>
         </div >

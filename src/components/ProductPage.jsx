@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ShopContext } from "../App";
 import styles from "../styles/ProductPage.module.css"
 import ImageSlider from "./ImageSlider";
+import LargeButton from "./LargeButton";
 
 export default function ProductPage() {
 
@@ -98,12 +99,17 @@ export default function ProductPage() {
                     <span>&nbsp;</span>
                     <button onClick={increaseQuantity}>+</button>
                 </div>
-                <button onClick={() => {
+                <LargeButton text={"ADD TO CART"} fn={function() {
+                    size && size !== "none" ? (
+                    addToCart(product.value, quantity, size),
+                    setQuantity(1)
+                ) : null}} />
+                {/* <button onClick={() => {
                     size && size !== "none" ? (
                         addToCart(product.value, quantity, size),
                         setQuantity(1)
                     ) : null
-                }}>Add to cart</button>
+                }}>Add to cart</button> */}
             </div>
 
         </div >

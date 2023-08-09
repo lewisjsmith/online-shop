@@ -1,39 +1,116 @@
-.cart-wrapper {
-    position: relative;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 2ch;
+.page-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10ch;
+    min-width: 480px;
+    max-width: 960px;
+}
 
-    height: 100%;
+.cart-wrapper {
+    box-sizing: border-box;
+
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+
+    height: auto;
     width: 100%;
-    padding: 2ch;
-    padding-top: 10%;
+
+    gap: 0.5rem;
+
+}
+
+.cart-left,
+.subtotal-wrapper {
 }
 
 .cart-left {
     position: relative;
-    background-color: lightblue;
+    box-sizing: border-box;
+    padding: 2rem;
+    padding-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title-wrapper {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.cart-list {
+    background-color: white;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    gap: 3ch;
+    text-indent: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: flex-start;
+}
+
+.cart-list-item {
+    box-sizing: border-box;
+    padding: 1rem;
+    position: relative;
+    border-bottom: black solid 1px;
+    width: 100%;
+}
+
+.subtotal-wrapper {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 0.5rem;
 }
 
 .cart-right {
     position: relative;
-    background-color: lightgreen;
-
+    box-sizing: border-box;
+    padding-top: 2rem;
 }
 
-.cart-list {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    text-indent: 0;
-    list-style-type: none;
-    padding: 2ch;
+.sub-cart-right {
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.total-details-wrapper {
+    padding: 1rem;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.total-details-wrapper p,
+.total-details-wrapper h4 {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
     margin: 0;
 }
 
-.cart-list-item {
-    position: relative;
-    height: 15%;
-    width: 80%;
+h5 {
+    margin: 0;
 }
