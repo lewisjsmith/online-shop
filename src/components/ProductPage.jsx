@@ -16,7 +16,6 @@ export default function ProductPage() {
     const [allImages, setAllImages] = useState([]);
     const [product, setProduct] = useState({});
 
-    const [quantity, setQuantity] = useState(1);
     const [size, setSize] = useState(null);
 
     function handleSizeChange(e) {
@@ -60,18 +59,6 @@ export default function ProductPage() {
         }
     }, [product])
 
-    function increaseQuantity() {
-        const x = quantity;
-        setQuantity(x + 1);
-    }
-
-    function decreaseQuantity() {
-        const x = quantity;
-        if (x > 1) {
-            setQuantity(x - 1);
-        }
-    }
-
     return (
         <div className={styles["page-wrapper"]}>
 
@@ -92,24 +79,10 @@ export default function ProductPage() {
                         <option value="XS">XS</option>
                     </select>
                 </div>
-                <div>
-                    <button onClick={decreaseQuantity}>-</button>
-                    <span>&nbsp;</span>
-                    <span>{quantity}</span>
-                    <span>&nbsp;</span>
-                    <button onClick={increaseQuantity}>+</button>
-                </div>
                 <LargeButton text={"ADD TO CART"} fn={function() {
                     size && size !== "none" ? (
-                    addToCart(product.value, quantity, size),
-                    setQuantity(1)
+                    addToCart(product.value, 1, size)
                 ) : null}} />
-                {/* <button onClick={() => {
-                    size && size !== "none" ? (
-                        addToCart(product.value, quantity, size),
-                        setQuantity(1)
-                    ) : null
-                }}>Add to cart</button> */}
             </div>
 
         </div >
