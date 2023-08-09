@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/ImageSlider.module.css"
+import left from "../assets/left.svg"
+import right from "../assets/right.svg"
 
 export default function ImageSlider(props) {
 
@@ -14,8 +16,16 @@ export default function ImageSlider(props) {
                     );
                 })}
             </div>
-            <button className={styles["btn-left"]} onClick={() => setSlide({ transform: "translateX(0%)" })}><span>&lt;</span></button>
-            <button className={styles["btn-right"]} onClick={() => setSlide({ transform: "translateX(-50%)" })}><span>&gt;</span></button>
+            <button className={styles["btn-left"]} onClick={() => setSlide({ transform: "translateX(0%)" })}>
+                <div className={styles["svg-wrapper"]}>
+                    <img src={left} viewBox="0 0 100 100" />
+                </div>
+            </button>
+            <button className={styles["btn-right"]} onClick={() => setSlide({ transform: "translateX(-50%)" })}>
+                <div className={styles["svg-wrapper"]}>
+                    <img src={right} viewBox="0 0 100 100"/>
+                </div>
+            </button>
         </div>
     );
 }

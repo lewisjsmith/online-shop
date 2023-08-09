@@ -26,14 +26,39 @@
 .btn-left,
 .btn-right {
     position: absolute;
-    top: 50%;
+    top: 45%;
     padding: 2ch;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    box-shadow: 2px 2px 2px rgba(20, 20, 20, 0);
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(3, 3, 3);
+    border-style: none;
 }
 
 .btn-left {
-    left: 0;
+    left: 10px;
 }
 
 .btn-right {
-    right: 0;
+    right: 10px;
+}
+
+.svg-wrapper {
+    width: 50px;
+    height: 50px;
+}
+
+.svg-wrapper img {
+    width: 50px;
+    height: 50px;
+}
+
+.svg-wrapper img:hover {
+    transform: scale(1.5);
 }
