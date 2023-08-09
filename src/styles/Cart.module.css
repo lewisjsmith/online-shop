@@ -13,12 +13,12 @@
 
 .cart-left {
     position: relative;
-    background-color: var(--bg-color);
+    background-color: lightblue;
 }
 
 .cart-right {
     position: relative;
-    background-color: var(--bg-color);
+    background-color: lightgreen;
 
 }
 
