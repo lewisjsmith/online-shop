@@ -7,7 +7,7 @@ import LargeButton from "./LargeButton";
 
 export default function ProductPage() {
 
-    const { addToCart, products } = useContext(ShopContext);
+    const { windowQuery, addToCart, products } = useContext(ShopContext);
     const location = useLocation();
 
     const [pathId, setPathId] = useState("");
@@ -60,30 +60,66 @@ export default function ProductPage() {
     }, [product])
 
     return (
-        <div className={styles["page-wrapper"]}>
 
-            <div className={styles["image-slider-wrapper"]}>
-                <ImageSlider allImages={allImages} />
-            </div>
+        <div>
 
-            <div className={styles["info-wrapper"]}>
-                <p className={styles["info-detail"]}>{productName}</p>
-                <p className={styles["info-detail"]}>£{(Math.round(productPrice * 100) / 100).toFixed(2)}</p>
-                <div>
-                    <select id="sizes" onChange={handleSizeChange}>
-                        <option value={"none"}>- Please select -</option>
-                        <option value="XL">XL</option>
-                        <option value="L">L</option>
-                        <option value="M">M</option>
-                        <option value="S">S</option>
-                        <option value="XS">XS</option>
-                    </select>
+            {windowQuery.matches && <div className={styles["page-wrapper"]}>
+
+                <div className={styles["image-slider-wrapper"]}>
+                    <ImageSlider allImages={allImages} />
                 </div>
-                <LargeButton text={"ADD TO CART"} fn={function() {
-                    size && size !== "none" ? (
-                    addToCart(product.value, 1, size)
-                ) : null}} />
-            </div>
+
+                <div className={styles["info-wrapper"]}>
+                    <p className={styles["info-detail"]}>{productName}</p>
+                    <p className={styles["info-detail"]}>£{(Math.round(productPrice * 100) / 100).toFixed(2)}</p>
+                    <div>
+                        <select id="sizes" onChange={handleSizeChange}>
+                            <option value={"none"}>- Please select -</option>
+                            <option value="XL">XL</option>
+                            <option value="L">L</option>
+                            <option value="M">M</option>
+                            <option value="S">S</option>
+                            <option value="XS">XS</option>
+                        </select>
+                    </div>
+                    <LargeButton text={"ADD TO CART"} fn={function () {
+                        size && size !== "none" ? (
+                            addToCart(product.value, 1, size)
+                        ) : null
+                    }} />
+                </div>
+
+            </div>}
+
+            {!windowQuery.matches && <div>
+                <div className={styles["page-wrapper-mobile"]}>
+
+                    <div className={styles["image-slider-wrapper-mobile"]}>
+                        <ImageSlider allImages={allImages} />
+                    </div>
+
+                    <div className={styles["info-wrapper-mobile"]}>
+                        <p className={styles["info-detail"]}>{productName}</p>
+                        <p className={styles["info-detail"]}>£{(Math.round(productPrice * 100) / 100).toFixed(2)}</p>
+                        <div>
+                            <select id="sizes" onChange={handleSizeChange}>
+                                <option value={"none"}>- Please select -</option>
+                                <option value="XL">XL</option>
+                                <option value="L">L</option>
+                                <option value="M">M</option>
+                                <option value="S">S</option>
+                                <option value="XS">XS</option>
+                            </select>
+                        </div>
+                        <LargeButton text={"ADD TO CART"} fn={function () {
+                            size && size !== "none" ? (
+                                addToCart(product.value, 1, size)
+                            ) : null
+                        }} />
+                    </div>
+
+                </div>
+            </div>}
 
         </div >
     );

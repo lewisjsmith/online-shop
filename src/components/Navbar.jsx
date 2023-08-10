@@ -38,7 +38,7 @@ function Navbar() {
         return () => {
             document.removeEventListener('click', handleClick, true);
         }
-    }, []);
+    }, [windowQuery]);
 
     // detects out of menu clicks
     useEffect(() => {
@@ -52,7 +52,7 @@ function Navbar() {
         return () => {
             document.removeEventListener('click', handleClick, true);
         }
-    }, []);
+    }, [windowQuery]);
 
     function menHide() {
         setMenDrop(false);
