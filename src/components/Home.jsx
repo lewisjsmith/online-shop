@@ -11,7 +11,7 @@ export default function Home() {
             width: "100%",
             height: "100%",
         }}>
-            <div style={{
+            {/* <div style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "contain",
@@ -30,11 +30,12 @@ export default function Home() {
                 }}>
                     <source src={vid} type="video/mp4" />
                 </video>
-            </div>
-            <div className={styles["button-wrapper"]}>
-                <Link to={"/men/"}><button className={styles["left"]} style={{ textDecoration: "none" }}>SHOP MEN</button></Link>
-                <Link to={"/women/"}><button className={styles["right"]} style={{ textDecoration: "none" }}>SHOP WOMEN</button></Link>
-            </div>
+                <div className={styles["button-wrapper"]}>
+                    <Link to={"/men/"}><button className={styles["left"]} style={{ textDecoration: "none" }}>SHOP MEN</button></Link>
+                    <Link to={"/women/"}><button className={styles["right"]} style={{ textDecoration: "none" }}>SHOP WOMEN</button></Link>
+                </div>
+            </div> */}
         </div>
+
     );
 }

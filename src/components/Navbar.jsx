@@ -8,10 +8,11 @@ import SearchBar from "./SearchBar";
 import cartSvg from "../assets/cart.svg";
 import logo from '../assets/logo.svg';
 import logo2 from '../assets/logo.svg';
+import Footer from './Footer'
 
 function Navbar() {
 
-    const { cartItems } = useContext(ShopContext);
+    const { cartItems, windowQuery } = useContext(ShopContext);
 
     const [cartNumber, setCartNumber] = useState(0);
 
@@ -23,6 +24,7 @@ function Navbar() {
 
     const menRef = useRef(null);
     const womenRef = useRef(null);
+
 
     useEffect(() => {
         const handleClick = (e) => {
@@ -96,7 +98,7 @@ function Navbar() {
                     </div>
                     <li className={styles["logo-wrapper"]}>
                         <Link to={"/"} style={{ textDecoration: "none" }}>
-                        <img className={styles["home-logo"]} src={logo2}/>
+                            <img className={styles["home-logo"]} src={logo2} />
                         </Link>
                     </li>
                     <div className={styles["buttons-wrapper"]}>
@@ -124,6 +126,7 @@ function Navbar() {
             </nav>
 
             <Outlet />
+            <Footer />
 
         </div>
     )

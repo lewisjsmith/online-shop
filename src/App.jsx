@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import productExamples from './productExamples';
@@ -17,12 +17,28 @@ export const ShopContext = createContext({
   products: [],
   cartItems: [],
   addToCart: () => { },
-  removeFromCart: () => { }
+  removeFromCart: () => { },
+  mobile: false
 });
 
 function App(props) {
 
   const [cartItems, setCartItems] = useState([]);
+  const [windowQuery, setWindowQuery] = useState({
+    matches: window.innerWidth > 600 ? true : false
+  })
+
+  useEffect(() => {
+    let mq = window.matchMedia("(min-width: 600px)");
+    mq.addEventListener("change", sizeCheck);
+    return () => mq.removeEventListener("change", sizeCheck);
+  }, []);
+
+  function sizeCheck(obj) {
+    const temp = obj.matches;
+    setWindowQuery({matches: temp})
+  }
+
   const products = productExamples;
 
   const addToCart = (value, added, size) => {
@@ -53,14 +69,14 @@ function App(props) {
     const vanillaList = [...cartItems];
     const updatedList = vanillaList.map(item => {
 
-      if(item.value === value && item.size === size) {
+      if (item.value === value && item.size === size) {
         if (quantity >= item.quantity) {
           return "";
         } else {
-          return {...item, quantity: (item.quantity - quantity)};
+          return { ...item, quantity: (item.quantity - quantity) };
         }
       } else {
-        return {...item}
+        return { ...item }
       }
     }).filter(space => space !== "");
 
@@ -70,23 +86,19 @@ function App(props) {
 
 
   return (
-    <ShopContext.Provider value={{ products, cartItems, addToCart, removeFromCart }}>
+
+    <ShopContext.Provider value={{ products, cartItems, addToCart, removeFromCart, windowQuery }}>
+
       <Routes>
-
         <Route path="/" element={<Navbar />}>
-
           <Route index element={<Home />} />
-
           <Route path="men" element={<StorePage />}>
             <Route path=":pathname" element={<StorePage />} />
           </Route>
-
           <Route path="women" element={<StorePage />}>
             <Route path=":pathname" element={<StorePage />} />
           </Route>
-
           <Route path="cart" element={<Cart />} />
-
           <Route path="product">
             {products.map(item => {
               return (
@@ -94,12 +106,10 @@ function App(props) {
               );
             })}
           </Route>
-
           <Route path="*" element={<ErrorPage />} />
-
         </Route>
-
       </Routes>
+
     </ShopContext.Provider>
   )
 }
