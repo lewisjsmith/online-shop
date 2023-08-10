@@ -6,6 +6,8 @@ import Dropdown from "./Dropdown"
 import CardPanel from "./CartPanel";
 import SearchBar from "./SearchBar";
 import cartSvg from "../assets/cart.svg";
+import logo from '../assets/logo.svg';
+import logo2 from '../assets/logo.svg';
 
 function Navbar() {
 
@@ -92,7 +94,11 @@ function Navbar() {
                             <h2 className={styles["option-hovers"]}>Women</h2>
                         </button>
                     </div>
-                    <li className={styles["logo-wrapper"]}><Link to={"/"} style={{ textDecoration: "none" }}><h2>Stoked</h2></Link></li>
+                    <li className={styles["logo-wrapper"]}>
+                        <Link to={"/"} style={{ textDecoration: "none" }}>
+                        <img className={styles["home-logo"]} src={logo2}/>
+                        </Link>
+                    </li>
                     <div className={styles["buttons-wrapper"]}>
                         <li><SearchBar /></li>
                         <li className={styles["cart-icon"]}>

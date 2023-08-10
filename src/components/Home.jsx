@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import vid from "../assets/video-merged.mp4"
+import vid from "../assets/video-merged.mp4";
 import styles from "../styles/Home.module.css";
+import logo from "../assets/logo.svg";
+import logo2 from "../assets/logo.svg";
 
 export default function Home() {
 
@@ -9,9 +11,6 @@ export default function Home() {
             width: "100%",
             height: "100%",
         }}>
-            <h1 className={styles["home-title"]}>
-                Stoked
-            </h1>
             <div style={{
                 width: "100%",
                 height: "100%",

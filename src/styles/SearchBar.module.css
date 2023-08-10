@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    z-index: 1;
+    z-index: 9999;
 
     padding: 1ch;
 
@@ -44,12 +44,12 @@
     justify-content: flex-start;
     align-items: flex-start;
 
-    z-index: -1;
+    z-index: 9999;
 
     background-color: var(--bg-color);
-    box-shadow: 0px 2px 15px var(--bx-shadow);
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.199);
 
-    top: 130%;
+    top: 110%;
 }
 
 .search-results-list-hidden {

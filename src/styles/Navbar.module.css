@@ -32,7 +32,7 @@ nav {
 
     background-color: var(--bg-color);
     color: var(--font-base);
-    box-shadow: 0px 2px 15px var(--bx-shadow);
+    box-shadow: 0px -10px 30px var(--bx-shadow);
 }
 
 .left-button,
@@ -51,6 +51,14 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.home-logo {
+    width: 120px;
+}
+
+.home-logo:hover {
+    transform: scale(1.03);
 }
 
 .sections-wrapper {
