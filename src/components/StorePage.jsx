@@ -8,7 +8,7 @@ import styles from '../styles/StorePage.module.css';
 
 export default function StorePage() {
 
-    const { products } = useContext(ShopContext);
+    const { windowQuery, products } = useContext(ShopContext);
 
     const [productSort, setProductSort] = useState(null);
     const [productList, setProductList] = useState([]);
@@ -75,7 +75,7 @@ export default function StorePage() {
     }) : productList;
 
     return (
-        <div className={styles["store-page-wrapper"]}>
+        <div className={windowQuery.matches ? styles["store-page-wrapper"] : styles["store-page-wrapper-mobile"]}>
 
             <h3 className={styles["page-name"]}>
                 {pageName}

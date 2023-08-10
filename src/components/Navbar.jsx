@@ -30,12 +30,8 @@ function Navbar() {
     // detects out of menu clicks
     useEffect(() => {
         const handleClick = (e) => {
-            try {
-                if (menRef && !menRef.current.contains(e.target)) {
-                    menHide && menHide();
-                }
-            } catch (err) {
-                console.log(err);
+            if (windowQuery.matches && menRef && !menRef.current.contains(e.target)) {
+                menHide && menHide();
             }
         };
         document.addEventListener('click', handleClick, true);
@@ -48,12 +44,8 @@ function Navbar() {
     useEffect(() => {
 
         const handleClick = (e) => {
-            try {
-                if (womenRef && !womenRef.current.contains(e.target)) {
-                    womenHide && womenHide();
-                }
-            } catch (err) {
-                console.log(err);
+            if (windowQuery.matches && womenRef && !womenRef.current.contains(e.target)) {
+                womenHide && womenHide();
             }
         };
         document.addEventListener('click', handleClick, true);
@@ -139,82 +131,107 @@ function Navbar() {
                 </div>}
 
                 {/* Mobile screen */}
-                {!windowQuery.matches && 
-                <ul className={styles["nav-wrapper-mobile"]}>
+                {!windowQuery.matches &&
+                    <ul className={styles["nav-wrapper-mobile"]}>
 
-                    <li className={styles["logo-wrapper-mobile"]}>
-                        <Link to={"/"} style={{ textDecoration: "none" }}>
-                            <img className={styles["home-logo-mobile"]} src={logo} />
-                        </Link>
-                    </li>
+                        <li className={styles["logo-wrapper-mobile"]}>
+                            <Link to={"/"} style={{ textDecoration: "none" }}>
+                                <img className={styles["home-logo-mobile"]} src={logo} />
+                            </Link>
+                        </li>
 
-                    <li>
-                        <button type="button" onClick={() => setShowBurger(!showBurger)}>
-                            Menu
-                        </button>
+                        <li>
+                            <button type="button" onClick={() => setShowBurger(!showBurger)}>
+                                Menu
+                            </button>
 
-                        {showBurger &&
-                            <div className={styles["burger-menu-wrapper"]}>
+                            {showBurger &&
+                                <div className={styles["burger-menu-wrapper"]}>
 
-                                <Link to={"/cart"}>
-                                    <button type="button" onClick={() => {
-                                        setShowBurger(false);
-                                        setMobileMenDrop(false);
-                                        setMobileWomenDrop(false);
-                                    }}>
-                                        <h2>Shopping Cart</h2>
+                                    <Link to={"/cart"}>
+                                        <button type="button" onClick={() => {
+                                            setShowBurger(false);
+                                            setMobileMenDrop(false);
+                                            setMobileWomenDrop(false);
+                                        }}>
+                                            <h2>Shopping Cart</h2>
+                                        </button>
+                                    </Link>
+
+                                    <button type="button" onClick={() => setMobileMenDrop(!mobileMenDrop)}>
+                                        <h2>Men</h2>
                                     </button>
-                                </Link>
 
-                                <button type="button" onClick={() => setMobileMenDrop(!mobileMenDrop)}>
-                                    <h2>Men</h2>
-                                </button>
+                                    {mobileMenDrop &&
+                                        <ul>
 
-                                {mobileMenDrop &&
-                                    <ul>
-                                        {["coats", "midlayers", "shirts", "bibs", "accessories"].map(item => {
-                                            return <li key={item}>
-                                                <Link to={`/men/${item}`} style={{ textDecoration: "none" }}>
+                                            <li key={"shop-all-men"}>
+                                                <Link to={`/men/`} style={{ textDecoration: "none" }}>
                                                     <button onClick={() => {
                                                         setShowBurger(false);
                                                         setMobileMenDrop(false);
                                                         setMobileWomenDrop(false);
                                                     }}>
-                                                        {item}
+                                                        Shop All
                                                     </button>
                                                 </Link>
-
                                             </li>
-                                        })}
-                                    </ul>
-                                }
 
-                                <button type="button" onClick={() => setMobileWomenDrop(!mobileWomenDrop)}>
-                                    <h2>Women</h2>
-                                </button>
+                                            {["coats", "midlayers", "shirts", "bibs", "accessories"].map(item => {
+                                                return <li key={item}>
+                                                    <Link to={`/men/${item}`} style={{ textDecoration: "none" }}>
+                                                        <button onClick={() => {
+                                                            setShowBurger(false);
+                                                            setMobileMenDrop(false);
+                                                            setMobileWomenDrop(false);
+                                                        }}>
+                                                            {item}
+                                                        </button>
+                                                    </Link>
 
-                                {mobileWomenDrop &&
-                                    <ul>
-                                        {["coats", "midlayers", "shirts", "bibs", "accessories"].map(item => {
-                                            return <li key={item}>
-                                                <Link to={`/women/${item}`} style={{ textDecoration: "none" }}>
+                                                </li>
+                                            })}
+                                        </ul>
+                                    }
+
+                                    <button type="button" onClick={() => setMobileWomenDrop(!mobileWomenDrop)}>
+                                        <h2>Women</h2>
+                                    </button>
+
+                                    {mobileWomenDrop &&
+                                        <ul>
+                                            <li key={"shop-all-women"}>
+                                                <Link to={`/women/`} style={{ textDecoration: "none" }}>
                                                     <button onClick={() => {
                                                         setShowBurger(false);
                                                         setMobileMenDrop(false);
                                                         setMobileWomenDrop(false);
                                                     }}>
-                                                        {item}
+                                                        Shop All
                                                     </button>
                                                 </Link>
                                             </li>
-                                        })}
-                                    </ul>
-                                }
 
-                            </div>}
-                    </li>
+                                            {["coats", "midlayers", "shirts", "bibs", "accessories"].map(item => {
+                                                return <li key={item}>
+                                                    <Link to={`/women/${item}`} style={{ textDecoration: "none" }}>
+                                                        <button onClick={() => {
+                                                            setShowBurger(false);
+                                                            setMobileMenDrop(false);
+                                                            setMobileWomenDrop(false);
+                                                        }}>
+                                                            {item}
+                                                        </button>
+                                                    </Link>
+                                                </li>
+                                            })}
+                                        </ul>
+                                    }
 
-                </ul>}
+                                </div>}
+                        </li>
+
+                    </ul>}
 
             </nav>
             <Outlet />
