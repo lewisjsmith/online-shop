@@ -1,0 +1,51 @@
+.page-wrapper {
+    margin-top: 70px;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-wrapper p {
+    margin: 0;
+    padding: 0;
+}
+
+.collage {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.ski {
+    position: absolute;
+    width: 80px;
+    right: 0;
+    left: auto;
+    transform: rotate(80deg);
+    top: 0;
+    bottom: auto;
+}
+
+.mountain {
+    position: relative;
+    width: 300px;
+}
+
+.movement {
+    position: absolute;
+    width: 35px;
+    right: 75px;
+    left: auto;
+    top: 50px;
+    transform: rotate(-60deg)
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

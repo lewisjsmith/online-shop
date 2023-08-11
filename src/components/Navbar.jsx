@@ -236,7 +236,6 @@ function Navbar() {
             </nav>
             <Outlet />
             <Footer />
-
         </div>
     )
 }

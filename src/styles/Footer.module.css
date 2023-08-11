@@ -1,8 +1,20 @@
 .footer-wrapper {
+    height: 30px;
+    font-size: 8px;
+    font-weight: lighter;
     width: 100%;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    background-color: rgba(252, 252, 252, 0.959);
+    color: rgb(182, 182, 182);
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2ch;
+}
+
+.github {
+    width: 13px;
+}
+
+a {
+    text-decoration: none;
 }
