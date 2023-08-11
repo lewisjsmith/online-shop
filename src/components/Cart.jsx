@@ -6,7 +6,7 @@ import styles from '../styles/Cart.module.css'
 
 export default function Cart() {
 
-    const { cartItems, products } = useContext(ShopContext);
+    const { windowQuery, cartItems, products } = useContext(ShopContext);
 
     const totalPrice = cartItems.reduce((total, item) => {
         return total + item.quantity * item.price;
@@ -14,11 +14,11 @@ export default function Cart() {
 
     return (
 
-        <div className={styles["page-wrapper"]}>
+        <div className={windowQuery.matches ? styles["page-wrapper"] : styles["page-wrapper-mobile"]}>
 
-            <div className={styles["cart-wrapper"]}>
+            <div className={windowQuery.matches ? styles["cart-wrapper"] : styles["cart-wrapper-mobile"]}>
 
-                <div className={styles["cart-left"]}>
+                <div className={windowQuery.matches ? styles["cart-left"] : styles["cart-left-mobile"]}>
 
                     <div className={styles["title-wrapper"]}>
                         <h3>MY CART</h3>
@@ -41,9 +41,9 @@ export default function Cart() {
 
                 </div>
 
-                <div className={styles["cart-right"]}>
+                <div className={windowQuery.matches ? styles["cart-right"] : styles["cart-right-mobile"]}>
                     <div className={styles["sub-cart-right"]}>
-                        <h3 className={styles["title-wrapper"]}>TOTAL</h3>
+                        <h3 className={windowQuery.matches ? styles["title-wrapper"] : styles["title-wrapper-mobile"]}>TOTAL</h3>
                         <div className={styles["total-details-wrapper"]}>
                             <p>Sub-total: £{(Math.round(totalPrice * 100) / 100).toFixed(2)}</p>
                             <p>Delivery</p>

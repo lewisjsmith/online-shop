@@ -5,7 +5,7 @@ import styles from "../styles/CartItemCard.module.css";
 
 export default function CartItemCard(props) {
 
-    const { cartItems, products, addToCart, removeFromCart } = useContext(ShopContext);
+    const { windowQuery, cartItems, products, addToCart, removeFromCart } = useContext(ShopContext);
 
     const { price, value, size, quantity } = props;
 
@@ -39,7 +39,7 @@ export default function CartItemCard(props) {
 
     return (
 
-        <div className={styles["card-wrapper"]}>
+        <div className={windowQuery.matches ? styles["card-wrapper"] : styles["card-wrapper-mobile"]}>
             <Link to={`/product/${value}`} style={{ textDecoration: "none" }}>
                 <div className={styles["image-container"]}>
                     <img src={src}></img>
