@@ -20,7 +20,12 @@ export default function Cart() {
 
                 <div className={windowQuery.matches ? styles["cart-left"] : styles["cart-left-mobile"]}>
 
-                    <div className={styles["title-wrapper"]}>
+                    <div className={styles["title-wrapper"]} style={windowQuery.matches ? {} : {
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-start",
+                        alignItems: "flex-start"
+                    }}>
                         <h3>MY CART</h3>
                         <h5>Items are reserved for 60 minutes</h5>
                     </div>
