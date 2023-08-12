@@ -1,4 +1,6 @@
 .footer-wrapper {
+    position: absolute;
+
     height: 30px;
     font-size: 8px;
     font-weight: lighter;
@@ -9,6 +11,8 @@
     justify-content: center;
     align-items: center;
     gap: 2ch;
+
+    bottom: 0;
 }
 
 .github {

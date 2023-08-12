@@ -88,7 +88,7 @@ function App(props) {
 
   return (
 
-    <div>
+    <div className="app">
       <ShopContext.Provider value={{ products, cartItems, addToCart, removeFromCart, windowQuery }}>
 
         <Routes>
@@ -113,6 +113,7 @@ function App(props) {
         </Routes>
 
       </ShopContext.Provider>
+      <Footer />
     </div>
   )
 }

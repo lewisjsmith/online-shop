@@ -84,7 +84,7 @@ function Navbar() {
     }
 
     return (
-        <div className={"app"}>
+        <div className={styles["upper-navbar"]}>
 
             {windowQuery.matches && <CardPanel show={show} setShow={setShow} onClickOutside={onClickOutside} />}
 
@@ -235,7 +235,7 @@ function Navbar() {
 
             </nav>
             <Outlet />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

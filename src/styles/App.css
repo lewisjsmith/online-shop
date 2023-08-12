@@ -4,41 +4,58 @@
     url("../fonts/Oxygen-Bold.ttf") format("truetype");
 }
 
+html {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     position: relative;
 
     font-family: "OxygenBold";
 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
     margin: 0;
     padding: 0;
-    height: auto;
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
 
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+
+    overflow-y: scroll;
 }
 
 body::-webkit-scrollbar {
     display: none;
 }
 
-#root,
-.app {
+#root {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: var(--font-base);
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.app {
+    flex-grow: 1;
+
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    color: var(--font-base);
-}
-
-.app {
+    
     position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 
     --bg-color: rgb(255, 255, 255);
     --bx-shadow: rgba(0, 0, 0, 0.493);

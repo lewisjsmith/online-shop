@@ -4,11 +4,9 @@ import git from "../assets/github-mark.svg"
 export default function Footer() {
 
     return (
-        <a href="https://github.com/lewisjsmith">
-            <div className={styles["footer-wrapper"]}>
+        <a className={styles["footer-wrapper"]} href="https://github.com/lewisjsmith">
                 <img className={styles["github"]} src={git}></img>
                 <h2>Developed by Lewis J Smith </h2>
-            </div>
         </a>
     );
 }
