@@ -73,32 +73,26 @@
 
 .left,
 .right {
-    position: relative;
-    border-style: none;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    font-weight: bolder;
-    font-size: 1.5rem;
-    box-sizing: border-box;
-    width: 25rem;
-    height: 5rem;
+    width: 100%;
+
 }
 
 .left-mobile,
 .right-mobile {
-    position: relative;
-    border-style: none;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    font-weight: bolder;
-    font-size: 1.5rem;
-    box-sizing: border-box;
     width: 70%;
-    height: 5rem;
 }
 
-.left:hover,
-.right:hover {
+.main-button {
+    width: 100%;
+    background-color: white;
+    padding: 2ch 5ch;
+    border-style: none;
+    font-weight: bolder;
+}
+
+
+.main-button:hover {
     background-color: rgb(0, 0, 0);
     color: white;
+    cursor:pointer;
 }

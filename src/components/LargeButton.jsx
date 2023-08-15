@@ -17,7 +17,7 @@ export default function LargeButton(props) {
     }
 
     return (
-            <button ref={ref} className={styles["button-purchase"]} onMouseDown={handleEvent} onMouseUp={handleEvent} style={{transform: `scale(${btnSize})`}} onClick={props.fn}>
+            <button ref={ref} className={styles["button-purchase"]} onMouseDown={handleEvent} onMouseUp={handleEvent} style={{transform: `scale(${btnSize})`, cursor: "pointer"}} onClick={props.fn}>
                 {props.text}
             </button>
     );

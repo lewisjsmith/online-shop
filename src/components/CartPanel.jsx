@@ -61,7 +61,7 @@ export default function CartPanel(props) {
             <h2>Cart</h2>
 
             <Link to={"/cart"} style={{textDecoration: "none"}}>
-                <button>Continue to Cart</button>
+                <button style={{cursor: "pointer"}}>Continue to Cart</button>
             </Link>
 
             <h3 style={{ color: "white" }}>
