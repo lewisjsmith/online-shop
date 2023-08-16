@@ -52,39 +52,40 @@ export default function CartPanel(props) {
         }
     })();
 
-    // console.log(stylingTest)
-
     return (
+        <div>
+            {props.show === "on" && <div className={styles["darken-ui"]}></div>}
+            
+            <div ref={panelRef} className={stylingTest}>
 
-        <div ref={panelRef} className={stylingTest}>
+                <h2 style={{ padding: "2ch 0 2ch 0", margin: "0" }}>CART</h2>
 
-            <h2 style={{padding: "2ch 0 2ch 0", margin: "0"}}>CART</h2>
+                <Link to={"/cart"} style={{ textDecoration: "none", padding: "0 0 2ch 0" }}>
+                    <button style={{
+                        cursor: "pointer",
+                        backgroundColor: "white",
+                        color: "black",
+                        padding: "1ch 2ch",
+                        border: "none",
+                        fontWeight: "bolder"
+                    }}>CONTINUE TO CART</button>
+                </Link>
 
-            <Link to={"/cart"} style={{textDecoration: "none", padding: "0 0 2ch 0"}}>
-                <button style={{
-                    cursor: "pointer",
-                    backgroundColor: "white",
-                    color: "black",
-                    padding: "1ch 2ch",
-                    border: "none",
-                    fontWeight: "bolder"
-            }}>CONTINUE TO CART</button>
-            </Link>
+                <h3 style={{ color: "white" }}>
+                    Total: £{(Math.round(total * 100) / 100).toFixed(2)}
+                </h3>
 
-            <h3 style={{ color: "white" }}>
-                Total: £{(Math.round(total * 100) / 100).toFixed(2)}
-            </h3>
+                <ul className={styles["cart-list"]}>
+                    {cartItems.map(item => {
+                        return (
+                            <li key={item.value + "-" + item.size} className={styles["list-item"]}>
+                                <CartCard item={item} quantity={item.quantity} size={item.size} />
+                            </li>
+                        );
+                    })}
+                </ul>
 
-            <ul className={styles["cart-list"]}>
-                {cartItems.map(item => {
-                    return (
-                        <li key={item.value + "-" + item.size} className={styles["list-item"]}>
-                            <CartCard item={item} quantity={item.quantity} size={item.size} />
-                        </li>
-                    );
-                })}
-            </ul>
-
+            </div>
         </div>
     );
 }
