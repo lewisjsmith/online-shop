@@ -123,10 +123,10 @@ function Navbar() {
                 </ul>}
                 {windowQuery.matches && <div>
                     <div ref={menRef}>
-                        <Dropdown main={"men"} drop={menDrop} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
+                        <Dropdown main={"men"} drop={menDrop} setDrop={menHide} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
                     </div>
                     <div ref={womenRef}>
-                        <Dropdown main={"women"} drop={womenDrop} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
+                        <Dropdown main={"women"} drop={womenDrop} setDrop={womenHide} links={["coats", "midlayers", "shirts", "bibs", "accessories"]} />
                     </div>
                 </div>}
 
