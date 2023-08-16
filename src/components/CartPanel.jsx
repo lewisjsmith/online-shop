@@ -52,10 +52,25 @@ export default function CartPanel(props) {
         }
     })();
 
+    const fadeBackground = (function () {
+        switch (props.show) {
+            case ("on"):
+                return styles["darken-ui"];
+                break;
+            case ("off"):
+                return styles["hide-darken-ui"]
+                break;
+            case ("animation"):
+                return styles["transition-darken-ui"]
+                break;
+        }
+    })();
+
     return (
         <div>
-            {props.show === "on" && <div className={styles["darken-ui"]}></div>}
             
+            {props.show === "on" && <div className={fadeBackground}></div>}
+
             <div ref={panelRef} className={stylingTest}>
 
                 <h2 style={{ padding: "2ch 0 2ch 0", margin: "0" }}>CART</h2>
@@ -86,6 +101,7 @@ export default function CartPanel(props) {
                 </ul>
 
             </div>
+            
         </div>
     );
 }

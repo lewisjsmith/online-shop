@@ -125,13 +125,11 @@
     visibility: visible;
 
     animation-name: fadeInUI;
-    animation-duration: 500ms, 800ms;
+    animation-duration: 500ms;
 }
 
 .transition-darken-ui {
-
-    animation-name: fadeOutUI;
-    animation-duration: 500ms, 800ms;
+    visibility: hidden;
 }
 
 .hide-darken-ui{
@@ -145,14 +143,5 @@
     }
     100% {
         opacity: 100%;
-    }
-}
-
-@keyframes fadeOutUI {
-    0% {
-        opacity: 100%;
-    }
-    100% {
-        opacity: 0%;
     }
 }
