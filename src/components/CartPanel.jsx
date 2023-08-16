@@ -58,10 +58,17 @@ export default function CartPanel(props) {
 
         <div ref={panelRef} className={stylingTest}>
 
-            <h2>Cart</h2>
+            <h2 style={{padding: "2ch 0 2ch 0", margin: "0"}}>CART</h2>
 
-            <Link to={"/cart"} style={{textDecoration: "none"}}>
-                <button style={{cursor: "pointer"}}>Continue to Cart</button>
+            <Link to={"/cart"} style={{textDecoration: "none", padding: "0 0 2ch 0"}}>
+                <button style={{
+                    cursor: "pointer",
+                    backgroundColor: "white",
+                    color: "black",
+                    padding: "1ch 2ch",
+                    border: "none",
+                    fontWeight: "bolder"
+            }}>CONTINUE TO CART</button>
             </Link>
 
             <h3 style={{ color: "white" }}>

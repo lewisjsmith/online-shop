@@ -240,4 +240,44 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 2ch;
+
+    overflow-y: scroll;
+}
+
+.burger-button-wrapper {
+    width: 70%;
+}
+
+.burger-button-styling,
+.burger-button-styling-selected,
+.burger-submenu-button {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 1ch 2ch;
+    border: 3px solid black;
+    font-weight: bolder;
+}
+
+.burger-button-styling-selected {
+    background-color: white;
+    color: black;
+}
+
+.burger-submenu-list {
+    padding: 0;
+    text-indent: none;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2ch;
+}
+
+.burger-submenu-list li {
+    width: 100%;
 }

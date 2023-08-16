@@ -69,7 +69,15 @@ export default function CartItemCard(props) {
                 </div>
             </Link>
             <div className={styles["button-wrapper"]}>
-                <button style={{cursor: "pointer"}} type="button" onClick={() => removeFromCart(value, quantity, size)}>X</button>
+                <button style={{
+                    cursor: "pointer",
+                    backgroundColor: "black",
+                    color: "white",
+                    fontWeight: "bolder",
+                    padding: "0.5ch 1ch",
+                    border: "none"
+                }}
+                 type="button" onClick={() => removeFromCart(value, quantity, size)}>X</button>
             </div>
         </div >
 

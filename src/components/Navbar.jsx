@@ -141,29 +141,34 @@ function Navbar() {
                         </li>
 
                         <li>
-                            <button type="button" onClick={() => setShowBurger(!showBurger)}>
-                                Menu
+                            <button type="button" onClick={() => setShowBurger(!showBurger)}
+                                className={showBurger ? styles["burger-button-styling-selected"] : styles["burger-button-styling"]}
+                                style={{padding: "0.5ch 2ch"}}>
+                                MENU
                             </button>
 
                             {showBurger &&
                                 <div className={styles["burger-menu-wrapper"]}>
 
-                                    <Link to={"/cart"}>
+                                    <Link to={"/cart"} className={styles["burger-button-wrapper"]}>
                                         <button type="button" onClick={() => {
                                             setShowBurger(false);
                                             setMobileMenDrop(false);
                                             setMobileWomenDrop(false);
-                                        }}>
-                                            <h2>Shopping Cart</h2>
+                                        }} className={styles["burger-button-styling"]}>
+                                            <h2>SHOPPING CART</h2>
                                         </button>
                                     </Link>
 
-                                    <button type="button" onClick={() => setMobileMenDrop(!mobileMenDrop)}>
-                                        <h2>Men</h2>
-                                    </button>
+                                    <div className={styles["burger-button-wrapper"]}>
+                                        <button type="button" onClick={() => setMobileMenDrop(!mobileMenDrop)}
+                                            className={mobileMenDrop ? styles["burger-button-styling-selected"] : styles["burger-button-styling"]}>
+                                            <h2>MEN</h2>
+                                        </button>
+                                    </div>
 
                                     {mobileMenDrop &&
-                                        <ul>
+                                        <ul className={styles["burger-submenu-list"]}>
 
                                             <li key={"shop-all-men"}>
                                                 <Link to={`/men/`} style={{ textDecoration: "none" }}>
@@ -171,8 +176,8 @@ function Navbar() {
                                                         setShowBurger(false);
                                                         setMobileMenDrop(false);
                                                         setMobileWomenDrop(false);
-                                                    }}>
-                                                        Shop All
+                                                    }} className={styles["burger-submenu-button"]}>
+                                                        SHOP ALL
                                                     </button>
                                                 </Link>
                                             </li>
@@ -184,8 +189,8 @@ function Navbar() {
                                                             setShowBurger(false);
                                                             setMobileMenDrop(false);
                                                             setMobileWomenDrop(false);
-                                                        }}>
-                                                            {item}
+                                                        }} className={styles["burger-submenu-button"]}>
+                                                            {item.toUpperCase()}
                                                         </button>
                                                     </Link>
 
@@ -194,33 +199,37 @@ function Navbar() {
                                         </ul>
                                     }
 
-                                    <button type="button" onClick={() => setMobileWomenDrop(!mobileWomenDrop)}>
-                                        <h2>Women</h2>
-                                    </button>
+                                    <div className={styles["burger-button-wrapper"]}>
+                                        <button type="button" onClick={() => setMobileWomenDrop(!mobileWomenDrop)}
+                                            className={mobileWomenDrop ? styles["burger-button-styling-selected"] : styles["burger-button-styling"]}>
+                                            <h2>WOMEN</h2>
+                                        </button>
+                                    </div>
 
                                     {mobileWomenDrop &&
-                                        <ul>
+                                        <ul className={styles["burger-submenu-list"]}>
                                             <li key={"shop-all-women"}>
                                                 <Link to={`/women/`} style={{ textDecoration: "none" }}>
                                                     <button onClick={() => {
                                                         setShowBurger(false);
                                                         setMobileMenDrop(false);
                                                         setMobileWomenDrop(false);
-                                                    }}>
-                                                        Shop All
+                                                    }} className={styles["burger-submenu-button"]}>
+                                                        SHOP ALL
                                                     </button>
                                                 </Link>
                                             </li>
 
                                             {["coats", "midlayers", "shirts", "bibs", "accessories"].map(item => {
                                                 return <li key={item}>
-                                                    <Link to={`/women/${item}`} style={{ textDecoration: "none" }}>
+                                                    <Link to={`/women/${item}`} style={{ textDecoration: "none", height: "100%", width: "100%" }}>
                                                         <button onClick={() => {
                                                             setShowBurger(false);
                                                             setMobileMenDrop(false);
                                                             setMobileWomenDrop(false);
-                                                        }}>
-                                                            {item}
+                                                        }}
+                                                            className={styles["burger-submenu-button"]}>
+                                                            {item.toUpperCase()}
                                                         </button>
                                                     </Link>
                                                 </li>
@@ -235,7 +244,6 @@ function Navbar() {
 
             </nav>
             <Outlet />
-            {/* <Footer /> */}
         </div>
     )
 }

@@ -104,7 +104,6 @@
     box-sizing: border-box;
     padding: 1rem;
     position: relative;
-    border-bottom: black solid 1px;
     width: 100%;
 }
 
