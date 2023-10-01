@@ -82,11 +82,13 @@ export default function ProductPage() {
                             <option value="XS">XS</option>
                         </select>
                     </div>
-                    <LargeButton text={"ADD TO CART"} fn={function () {
-                        size && size !== "none" ? (
-                            addToCart(product.value, 1, size)
-                        ) : null
-                    }} />
+                    <div className={styles["info-checkout-wrapper"]}>
+                        <LargeButton text={"ADD TO CART"} fn={function () {
+                            size && size !== "none" ? (
+                                addToCart(product.value, 1, size)
+                            ) : null
+                        }} />
+                    </div>
                 </div>
 
             </div>}
@@ -111,11 +113,13 @@ export default function ProductPage() {
                                 <option value="XS">XS</option>
                             </select>
                         </div>
-                        <LargeButton text={"ADD TO CART"} fn={function () {
-                            size && size !== "none" ? (
-                                addToCart(product.value, 1, size)
-                            ) : null
-                        }} />
+                        <div className={styles["info-checkout-wrapper"]}>
+                            <LargeButton text={"ADD TO CART"} fn={function () {
+                                size && size !== "none" ? (
+                                    addToCart(product.value, 1, size)
+                                ) : null
+                            }} />
+                        </div>
                     </div>
 
                 </div>
