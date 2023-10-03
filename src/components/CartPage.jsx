@@ -4,7 +4,7 @@ import CartItemCard from './CartItemCard';
 import LargeButton from './LargeButton';
 import styles from '../styles/Cart.module.css'
 
-export default function Cart() {
+export default function CartPage() {
 
     const { windowQuery, cartItems, products } = useContext(ShopContext);
 

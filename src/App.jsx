@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import productExamples from './productExamples';
 import Navbar from './components/Navbar'
 import ErrorPage from './components/ErrorPage'
-import Cart from './components/Cart'
+import CartPage from './components/CartPage'
 import StorePage from './components/StorePage'
 import Home from './components/Home'
 import ProductPage from './components/ProductPage';
@@ -100,7 +100,7 @@ function App(props) {
             <Route path="women" element={<StorePage />}>
               <Route path=":pathname" element={<StorePage />} />
             </Route>
-            <Route path="cart" element={<Cart />} />
+            <Route path="cart" element={<CartPage />} />
             <Route path="product">
               {products.map(item => {
                 return (

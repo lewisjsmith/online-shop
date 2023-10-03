@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import styles from "../styles/CartCard.module.css"
 
-export default function CartCard(props) {
+export default function CartPanelCard(props) {
 
     const { products } = useContext(ShopContext);
     const [photo, setPhoto] = useState("");

@@ -2,7 +2,7 @@ import styles from "../styles/Card.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function Card(props) {
+export default function ProductCard(props) {
 
     const [source, setSource] = useState(null);
 

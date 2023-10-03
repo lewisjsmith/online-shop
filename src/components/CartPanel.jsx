@@ -2,7 +2,7 @@ import styles from '../styles/CartPanel.module.css';
 import { Link } from 'react-router-dom';
 import { useContext, useEffect, useRef } from 'react'
 import { ShopContext } from '../App'
-import CartCard from './CartCard';
+import CartPanelCard from './CartPanelCard';
 
 export default function CartPanel(props) {
 
@@ -94,7 +94,7 @@ export default function CartPanel(props) {
                     {cartItems.map(item => {
                         return (
                             <li key={item.value + "-" + item.size} className={styles["list-item"]}>
-                                <CartCard item={item} quantity={item.quantity} size={item.size} />
+                                <CartPanelCard item={item} quantity={item.quantity} size={item.size} />
                             </li>
                         );
                     })}
