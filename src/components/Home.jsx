@@ -11,9 +11,9 @@ export default function Home() {
     const { windowQuery } = useContext(ShopContext);
 
     return (
-        <div className={styles["home-page"]} style={windowQuery.matches ? { marginTop: "100px" } : { marginTop: "70px" }}>
+        <div className={styles["home-page"]}>
 
-            <div style={{ height: "100%", width: "100%" }}>
+            <div className={styles["home-page-wrapper"]}>
 
                 <div className={styles["video-wrapper"]}>
                     <video autoPlay loop muted className={styles["video"]}>
@@ -29,12 +29,11 @@ export default function Home() {
                         </h2>
                     </div>
                 </div>
+            </div>
 
-                <div className={windowQuery.matches ? styles["button-wrapper"] : styles["button-wrapper-mobile"]}>
-                    <Link to={"/men/"} className={windowQuery.matches ? styles["left"] : styles["left-mobile"]}><button className={styles["main-button"]} style={{ textDecoration: "none" }}>SHOP MEN</button></Link>
-                    <Link to={"/women/"} className={windowQuery.matches ? styles["right"] : styles["right-mobile"]}><button className={styles["main-button"]} style={{ textDecoration: "none" }}>SHOP WOMEN</button></Link>
-                </div>
-
+            <div className={windowQuery.matches ? styles["button-wrapper"] : styles["button-wrapper-mobile"]}>
+                <Link to={"/men/"} className={windowQuery.matches ? styles["left"] : styles["left-mobile"]}><button className={styles["main-button"]} style={{ textDecoration: "none" }}>SHOP MEN</button></Link>
+                <Link to={"/women/"} className={windowQuery.matches ? styles["right"] : styles["right-mobile"]}><button className={styles["main-button"]} style={{ textDecoration: "none" }}>SHOP WOMEN</button></Link>
             </div>
 
         </div>

@@ -63,7 +63,6 @@
 }
 
 .title-wrapper {
-    background-color: white;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -121,6 +120,7 @@
     position: relative;
     box-sizing: border-box;
     padding-top: 2rem;
+    padding-right: 2rem;
 }
 
 .cart-right-mobile {
@@ -141,6 +141,11 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 1rem;
+
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.342);
 }
 
 .total-details-wrapper p,

@@ -2,12 +2,17 @@
     position: relative;
     display: flex;
     gap: 2ch;
+    box-sizing: border-box;
+    padding: 3px;
+
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.178);
 }
 
 .card-wrapper-mobile {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.178);
 }
 
 .image-container {
@@ -22,6 +27,7 @@
 
     width: 120px;
     height: 120px;
+    cursor: pointer;
 }
 
 img {
@@ -39,6 +45,7 @@ img {
     justify-content: center;
     align-items: flex-start;
     gap: 1ch;
+    padding-left: 1rem;
 }
 
 .card-details p,

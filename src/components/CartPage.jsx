@@ -48,7 +48,7 @@ export default function CartPage() {
 
                 <div className={windowQuery.matches ? styles["cart-right"] : styles["cart-right-mobile"]}>
                     <div className={styles["sub-cart-right"]}>
-                        <h3 className={windowQuery.matches ? styles["title-wrapper"] : styles["title-wrapper-mobile"]}>TOTAL</h3>
+                        <h3 className={windowQuery.matches ? styles["title-wrapper"] : styles["title-wrapper-mobile"]} style={{backgroundColor: "black", color: "white"}}>TOTAL</h3>
                         <div className={styles["total-details-wrapper"]}>
                             <p>Sub-total: £{(Math.round(totalPrice * 100) / 100).toFixed(2)}</p>
                             <p>Delivery</p>
