@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/Dropdown.module.css";
-import skiSet from "../assets/ski-svg.svg";
+import skiSet from "../../public/ski-svg.svg";
 
 export default function Dropdown(props) {
 

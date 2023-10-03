@@ -1,5 +1,5 @@
 import styles from "../styles/Footer.module.css";
-import git from "../assets/github-mark.svg"
+import git from "../../public/github-mark.svg"
 
 export default function Footer() {
 

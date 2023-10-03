@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/ImageSlider.module.css"
-import left from "../assets/left.svg"
-import right from "../assets/right.svg"
+import left from "../../public/left.svg"
+import right from "../../public/right.svg"
 
 export default function ImageSlider(props) {
 

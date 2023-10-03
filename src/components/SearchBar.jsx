@@ -2,7 +2,7 @@ import { useContext, useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../App';
 import styles from '../styles/SearchBar.module.css';
-import searchSvg from '../assets/search.svg';
+import searchSvg from '../../public/search.svg';
 
 export default function SearchBar() {
 

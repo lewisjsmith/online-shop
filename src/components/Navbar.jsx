@@ -5,10 +5,10 @@ import styles from "../styles/Navbar.module.css";
 import Dropdown from "./Dropdown";
 import CardPanel from "./CartPanel";
 import SearchBar from "./SearchBar";
-import cartSvg from "../assets/cart.svg";
+import cartSvg from "../../public/cart.svg";
 
-import logo from '../assets/logo.svg';
-import logo2 from '../assets/logo2.svg';
+import logo from '../../public/logo.svg';
+import logo2 from '../../public/logo2.svg';
 import Footer from './Footer'
 
 function Navbar() {

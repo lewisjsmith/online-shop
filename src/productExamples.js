@@ -1,38 +1,71 @@
 import { v4 as uuid } from 'uuid';
 
-import cf1 from './assets/coat-1-front.png';
-import cb1 from './assets/coat-1-back.png';
-import cf2 from './assets/coat-2-front.png';
-import cb2 from './assets/coat-2-back.png';
-import cf3 from './assets/coat-3-front.png';
-import cb3 from './assets/coat-3-back.png';
+// Mens
 
-import sf1 from './assets/shirt-1-front.png';
-import sb1 from './assets/shirt-1-back.png';
+import cf1 from '../public/coat-1-front.png';
+import cb1 from '../public/coat-1-back.png';
+import cf2 from '../public/coat-2-front.png';
+import cb2 from '../public/coat-2-back.png';
+import cf3 from '../public/coat-3-front.png';
+import cb3 from '../public/coat-3-back.png';
+import cf4 from '../public/coat-4-front.png';
+import cb4 from '../public/coat-4-back.png';
+import cf5 from '../public/coat-5-front.png';
+import cb5 from '../public/coat-5-back.png';
 
-import bf1 from './assets/bib-1-front.png';
-import bb1 from './assets/bib-1-back.png';
+import sf1 from '../public/shirt-1-front.png';
+import sb1 from '../public/shirt-1-back.png';
+import sf2 from '../public/shirt-2-front.png';
+import sb2 from '../public/shirt-2-back.png';
 
-import wcf1 from './assets/wcoat-1-front.png';
-import wcb1 from './assets/wcoat-1-back.png';
-import wcf2 from './assets/wcoat-2-front.png';
-import wcb2 from './assets/wcoat-2-back.png';
-import wcf3 from './assets/wcoat-3-front.png';
-import wcb3 from './assets/wcoat-3-back.png';
+import bf1 from '../public/bib-1-front.png';
+import bb1 from '../public/bib-1-back.png';
+import bf2 from '../public/bib-2-front.png';
+import bb2 from '../public/bib-2-back.png';
 
-import midf1 from './assets/mid-1-front.png';
-import midb1 from './assets/mid-1-back.png';
-import midf2 from './assets/mid-2-front.png';
-import midb2 from './assets/mid-2-back.png';
-import midf3 from './assets/mid-3-front.png';
-import midb3 from './assets/mid-3-back.png';
+import midf1 from '../public/mid-1-front.png';
+import midb1 from '../public/mid-1-back.png';
+import midf2 from '../public/mid-2-front.png';
+import midb2 from '../public/mid-2-back.png';
+import midf3 from '../public/mid-3-front.png';
+import midb3 from '../public/mid-3-back.png';
 
-import wmidf1 from './assets/wmid-1-front.png';
-import wmidb1 from './assets/wmid-1-back.png';
-import wmidf2 from './assets/wmid-2-front.png';
-import wmidb2 from './assets/wmid-2-back.png';
-import wmidf3 from './assets/wmid-3-front.png';
-import wmidb3 from './assets/wmid-3-back.png';
+import acc1v1 from '../public/acc-1-v1.png';
+import acc1v2 from '../public/acc-1-v2.png';
+import acc2v1 from '../public/acc-2-v1.png';
+import acc2v2 from '../public/acc-2-v2.png';
+import acc3v1 from '../public/acc-3-v1.png';
+import acc3v2 from '../public/acc-3-v2.png';
+
+// Womens
+
+import wcf1 from '../public/wcoat-1-front.png';
+import wcb1 from '../public/wcoat-1-back.png';
+import wcf2 from '../public/wcoat-2-front.png';
+import wcb2 from '../public/wcoat-2-back.png';
+import wcf3 from '../public/wcoat-3-front.png';
+import wcb3 from '../public/wcoat-3-back.png';
+import wcf4 from '../public/wcoat-4-front.png';
+import wcb4 from '../public/wcoat-4-back.png';
+import wcf5 from '../public/wcoat-5-front.png';
+import wcb5 from '../public/wcoat-5-back.png';
+
+import wmidf1 from '../public/wmid-1-front.png';
+import wmidb1 from '../public/wmid-1-back.png';
+import wmidf2 from '../public/wmid-2-front.png';
+import wmidb2 from '../public/wmid-2-back.png';
+import wmidf3 from '../public/wmid-3-front.png';
+import wmidb3 from '../public/wmid-3-back.png';
+
+import wsf1 from '../public/wshirt-1-front.png';
+import wsb1 from '../public/wshirt-1-back.png';
+import wsf2 from '../public/wshirt-2-front.png';
+import wsb2 from '../public/wshirt-2-back.png';
+
+import wbf1 from '../public/wbib-1-front.png';
+import wbb1 from '../public/wbib-1-back.png';
+import wbf2 from '../public/wbib-2-front.png';
+import wbb2 from '../public/wbib-2-back.png';
 
 const productExamples = [
     {
@@ -55,6 +88,20 @@ const productExamples = [
         price: 170.00,
         srcOne: cf3,
         srcTwo: cb3
+    },
+    {
+        categories: ["men", "coats"],
+        value: "long-khaki-rain-parka",
+        price: 200.00,
+        srcOne: cf4,
+        srcTwo: cb4
+    },
+    {
+        categories: ["men", "coats"],
+        value: "ruby-performace-ski-coat",
+        price: 210.00,
+        srcOne: cf5,
+        srcTwo: cb5
     },
     {
         categories: ["men", "midlayers"],
@@ -85,14 +132,27 @@ const productExamples = [
         srcTwo: sb1
     },
     {
+        categories: ["men", "shirts"],
+        value: "neutral-shirt",
+        price: 50.00,
+        srcOne: sf2,
+        srcTwo: sb2
+    },
+    {
         categories: ["men", "bibs"],
         value: "night-blue-bib",
         price: 200.00,
         srcOne: bf1,
         srcTwo: bb1
     },
+    {
+        categories: ["men", "bibs"],
+        value: "camo-bib",
+        price: 180.00,
+        srcOne: bf2,
+        srcTwo: bb2
+    },
 
-    
     {
         categories: ["women", "coats"],
         value: "crimson-pattern-jacket",
@@ -103,16 +163,30 @@ const productExamples = [
     {
         categories: ["women", "coats"],
         value: "spring-pattern-jacket",
-        price: 200.00,
+        price: 180.00,
         srcOne: wcf2,
         srcTwo: wcb2
     },
     {
         categories: ["women", "coats"],
         value: "army-green-jacket",
-        price: 200.00,
+        price: 150.00,
         srcOne: wcf3,
         srcTwo: wcb3
+    },
+    {
+        categories: ["women", "coats"],
+        value: "Winters-night-jacket",
+        price: 220.00,
+        srcOne: wcf4,
+        srcTwo: wcb4
+    },
+    {
+        categories: ["women", "coats"],
+        value: "Snow-cover-jacket",
+        price: 220.00,
+        srcOne: wcf5,
+        srcTwo: wcb5
     },
     {
         categories: ["women", "midlayers"],
@@ -134,6 +208,56 @@ const productExamples = [
         price: 110.00,
         srcOne: wmidf3,
         srcTwo: wmidb3
+    },
+    {
+        categories: ["women", "shirts"],
+        value: "coral-red-shirt",
+        price: 70.00,
+        srcOne: wsf1,
+        srcTwo: wsb1
+    },
+    {
+        categories: ["women", "shirts"],
+        value: "light-Tee",
+        price: 25.00,
+        srcOne: wsf2,
+        srcTwo: wsb2
+    },
+    {
+        categories: ["women", "bibs"],
+        value: "Midnight--bib",
+        price: 200.00,
+        srcOne: wbf1,
+        srcTwo: wbb1
+    },
+    {
+        categories: ["women", "bibs"],
+        value: "Forest-bib",
+        price: 180.00,
+        srcOne: wbf2,
+        srcTwo: wbb2
+    },
+
+    {
+        categories: ["men", "women", "accessories"],
+        value: "woodland-cap",
+        price: 30.00,
+        srcOne: acc1v1,
+        srcTwo: acc1v2
+    },
+    {
+        categories: ["men", "women", "accessories"],
+        value: "Cream-bean",
+        price: 25.00,
+        srcOne: acc2v1,
+        srcTwo: acc2v2
+    },
+    {
+        categories: ["men", "women", "accessories"],
+        value: "Grey-knit-beanie",
+        price: 20.00,
+        srcOne: acc3v1,
+        srcTwo: acc3v2
     },
 
 ]

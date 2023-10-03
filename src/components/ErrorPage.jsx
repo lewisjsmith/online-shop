@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from "../styles/ErrorPage.module.css";
-import ski from "../assets/ski.svg";
-import mountain from "../assets/mountain.svg";
-import movement from "../assets/movement.svg"
+import ski from "../../public/ski.svg";
+import mountain from "../../public/mountain.svg";
+import movement from "../../public/movement.svg"
 
 function ErrorPage() {
 

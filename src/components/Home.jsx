@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { Link } from "react-router-dom";
-import vid from "../assets/video-merged.mp4";
+import vid from "../../public/video-merged.mp4";
 import styles from "../styles/Home.module.css";
-import logo from "../assets/logo.svg";
-import logo2 from "../assets/logo.svg";
+import logo from "../../public/logo.svg";
+import logo2 from "../../public/logo.svg";
 import { ShopContext } from "../App";
 
 export default function Home() {
