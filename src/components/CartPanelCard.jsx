@@ -24,7 +24,7 @@ export default function CartPanelCard(props) {
                 </div>
 
                 <div className={styles["card-details"]}>
-                    <p>{props.item.value.split("-").join(" ")}</p>
+                    <p style={{ textTransform: "capitalize" }}>{props.item.value.split("-").join(" ")}</p>
                     <p>Size: {props.item.size}</p>
                     <p>Quantity: {props.quantity}</p>
                     <p>Sub-total: £{(Math.round(props.quantity * props.item.price * 100) / 100).toFixed(2)}</p>

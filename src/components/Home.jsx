@@ -13,21 +13,21 @@ export default function Home() {
     return (
         <div className={styles["home-page"]}>
 
+            <div className={styles["center-text"]}>
+                <h2>
+                    Effortless style.
+                </h2>
+                <h2>
+                    Responsibly sourced.
+                </h2>
+            </div>
+
             <div className={styles["home-page-wrapper"]}>
 
                 <div className={styles["video-wrapper"]}>
                     <video autoPlay loop muted className={styles["video"]}>
                         <source src={vid} type="video/mp4" />
                     </video>
-
-                    <div className={styles["center-text"]}>
-                        <h2>
-                            Effortless style.
-                        </h2>
-                        <h2>
-                            Responsibly sourced.
-                        </h2>
-                    </div>
                 </div>
             </div>
 
