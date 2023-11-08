@@ -1,10 +1,6 @@
-# E-Commerce store for imagined snowsports brand "Stoked".
-All images and video are taken for demo purposes only, this is a fictional shop.
+E-commerce Store for a Snowsports Brand.
 
-## Live site available at: https://lewisjsmith.github.io/online-shop/
-![Image of store page showing men's wear.](docs/figure_1.png)
+Live site (via Github Pages): https://lewisjsmith.github.io/online-shop/
 
-## Personal Development: 
+All images and video are taken for demo purposes only, this is a fictional shop. Credits go to Amunsden Sports and Planks Clothing.
 
-- TypeScript practice.
-- Build fluency in React, React-Router and Response Design.
